@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>PRATIRUP | UAV Engine Digital Twin</title>
+  <title>PRATIRUP X4.10 | UAV Engine Digital Twin</title>
 
   <style>
     * {
@@ -725,7 +725,7 @@
 
 
   <div id="fuelFlowLegend" class="sim-drawer drawer-hidden-right">
-    <h3> FUEL INJECTION FLOW</h3>
+    <h3>X3 FUEL INJECTION FLOW</h3>
     <p>
       Common rail → injector → atomized fuel spray → combustion chamber.
       Injection pulses are synchronized with each piston cycle.
@@ -4071,15 +4071,8 @@ for (let i = 0; i < 3; i++) {
   rotorFan.add(bladeRoot);
 }
 
-// Spinner nose extension.
-const spinnerNose = new THREE.Mesh(
-  new THREE.ConeGeometry(0.42, 0.82, 40),
-  x45Steel
-);
-spinnerNose.rotation.z = Math.PI / 2;
-spinnerNose.position.set(-7.42, 0.70, 0);
-spinnerNose.castShadow = true;
-x45Group.add(spinnerNose);
+// Legacy X4.5 shaft-side spinner removed in X4.10.
+// The only nose/spinner is jayemSpinner, physically attached to rotorAssembly.
 
 // Propeller tip discs/markings to enhance reference-like perception.
 for (let i = 0; i < 3; i++) {
