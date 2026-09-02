@@ -1,0 +1,3210 @@
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRATIRUP | MALE UAV Digital Twin</title>
+
+  <!-- Existing project styles -->
+  <link rel="stylesheet" href="css/historical-replay.css" />
+  <link rel="stylesheet" href="css/dash.css" />
+  <link rel="stylesheet" href="css/operator-readiness.css" />
+  <link rel="stylesheet" href="css/long-duration-dashboard.css" />
+  <link rel="stylesheet" href="css/dashboard-professional-white.css" />
+
+  <!-- Three.js: one import map, shared by all module scripts -->
+<!-- Inline sidebar styles: removes dependency on missing sidebar-icons.css -->
+  
+
+  <!-- Inline Hybrid Intelligence styles: removes dependency on missing hybrid-intelligence-dashboard.css -->
+  
+
+
+  <!-- UAV mission canvas + refined continuous navigation -->
+  
+
+  <!--
+    Inline CSS was intentionally extracted.
+    Merge the supplied CSS file into your preferred project stylesheet,
+    or add your own external <link> when ready.
+  -->
+
+</head>
+
+
+<body class="redux-dashboard-theme">
+
+<div class="app-shell">
+
+
+  <!-- =====================================================
+       SIDEBAR
+  ====================================================== -->
+
+  <aside class="sidebar">
+
+    <div class="brand">
+
+      <div class="brand-logo">
+
+        <img
+          src="pratirup-logo.png"
+          alt="PRATIRUP Logo"
+        />
+
+      </div>
+
+
+      <div class="brand-copy">
+
+        <h1>
+          PRATIRUP
+        </h1>
+
+        <span>
+          AERO ENGINE DIGITAL TWIN
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- PLATFORM INFORMATION -->
+
+    <div class="platform-card">
+
+      <div class="platform-row">
+
+        <span>PLATFORM</span>
+
+        <strong>
+          MALE UAV
+        </strong>
+
+      </div>
+
+
+      <div class="platform-row">
+
+        <span>ENGINE CLASS</span>
+
+        <strong>
+          AERO PISTON
+        </strong>
+
+      </div>
+
+
+      <div class="platform-row">
+
+        <span>POWER CLASS</span>
+
+        <strong>
+          180 HP
+        </strong>
+
+      </div>
+
+
+      <div class="platform-row">
+
+        <span>VISUAL MODEL</span>
+
+        <strong>
+          X4.10
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="main-nav" aria-label="PRATIRUP section navigation">
+      <button aria-current="page" class="nav-item active" data-scroll-target="telemetrySection" data-view="telemetry" type="button">
+      <span aria-hidden="true" class="nav-icon">⌁</span><span class="nav-item-label">Telemetry</span>
+      </button>
+      <button class="nav-item" data-scroll-target="simulationStage" data-view="simulation" type="button">
+      <span aria-hidden="true" class="nav-icon">⬡</span><span class="nav-item-label">Digital Twin</span>
+      </button>
+      <button class="nav-item" data-scroll-target="componentInspector" data-view="components" type="button">
+      <span aria-hidden="true" class="nav-icon">⚙</span><span class="nav-item-label">Components</span>
+      </button>
+      <button class="nav-item" data-scroll-target="uavMissionSimulationSection" data-view="uav" type="button">
+      <span aria-hidden="true" class="nav-icon">△</span><span class="nav-item-label">UAV Simulation</span>
+      </button>
+      <button class="nav-item" data-scroll-target="missionControlPanel" data-view="mission" type="button">
+      <span aria-hidden="true" class="nav-icon">✦</span><span class="nav-item-label">Mission</span>
+      </button>
+      <button class="nav-item" data-scroll-target="historicalReplayPanel" data-view="replay" type="button">
+      <span aria-hidden="true" class="nav-icon">↻</span><span class="nav-item-label">History / Replay</span>
+      </button>
+      <button class="nav-item" data-scroll-target="operatorReadinessPanel" data-view="readiness" type="button">
+      <span aria-hidden="true" class="nav-icon">✓</span><span class="nav-item-label">Readiness</span>
+      </button>
+      <button class="nav-item" data-scroll-target="hybridIntelligencePanel" data-view="hybrid" type="button">
+      <span aria-hidden="true" class="nav-icon">◎</span><span class="nav-item-label">Hybrid AI</span>
+      </button>
+      <button class="nav-item" data-scroll-target="inspectionSection" data-view="inspection" type="button">
+      <span aria-hidden="true" class="nav-icon">⌕</span><span class="nav-item-label">Inspection</span>
+      </button>
+      <button class="nav-item" data-scroll-target="engineHealthSection" data-view="health" type="button">
+      <span aria-hidden="true" class="nav-icon">♥</span><span class="nav-item-label">Engine Health</span>
+      </button>
+      <button class="nav-item" data-scroll-target="longDurationPanel" data-view="lifecycle" type="button">
+      <span aria-hidden="true" class="nav-icon">∞</span><span class="nav-item-label">Long-Hour Study</span>
+      </button>
+      <button class="nav-item" data-scroll-target="teamFooter" data-view="team" type="button">
+      <span aria-hidden="true" class="nav-icon">◉</span><span class="nav-item-label">Team QubitX</span>
+      </button>
+    </nav>
+
+
+    <!-- SOURCE -->
+
+    <div class="sidebar-note">
+
+      <div class="status-line">
+
+        <span class="status-dot"></span>
+
+        DIGITAL TWIN READY
+
+      </div>
+
+
+      <p>
+        Simulation pipeline connected to the
+        PRATIRUP Digital Twin Core.
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN WORKSPACE
+  ====================================================== -->
+
+  <main class="workspace">
+
+
+    <!-- ===================================================
+         HEADER
+    ==================================================== -->
+
+    <header class="topbar">
+
+      <button class="sidebar-toggle" type="button" aria-label="Toggle dashboard navigation" aria-expanded="false" data-sidebar-toggle>☰</button>
+
+      <div class="title-block">
+
+        <span class="eyebrow">
+          PROPULSION INTELLIGENCE SYSTEM
+        </span>
+
+        <h2>
+          MALE UAV Engine Digital Twin
+        </h2>
+
+        <p>
+          Real-time virtual engine monitoring,
+          simulation and predictive-health platform.
+        </p>
+
+      </div>
+
+
+      <div class="top-status">
+
+
+        <!-- DATA SOURCE -->
+
+        <div class="status-card">
+
+          <span>
+            DATA SOURCE
+          </span>
+
+          <strong id="twinSource">
+            SIMULATION
+          </strong>
+
+        </div>
+
+
+        <!-- SYNC -->
+
+        <div class="status-card">
+
+          <span>
+            TWIN STATUS
+          </span>
+
+          <strong id="twinSyncStatus">
+
+            <span class="status-dot"></span>
+
+            SYNCHRONIZED
+
+          </strong>
+
+        </div>
+
+
+        <!-- MODEL -->
+
+        <div class="status-card">
+
+          <span>
+            MODEL
+          </span>
+
+          <strong>
+            X4.10
+          </strong>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================
+         PRIMARY TELEMETRY
+    ==================================================== -->
+
+    <section class="telemetry-strip" id="telemetrySection" data-scroll-section="telemetry">
+
+
+      <!-- RPM -->
+
+      <article class="telemetry-card">
+
+        <span class="telemetry-label">
+          ENGINE RPM
+        </span>
+
+        <div class="telemetry-reading">
+
+          <strong id="telemetryRpm">
+            --
+          </strong>
+
+          <small>
+            RPM
+          </small>
+
+        </div>
+
+      </article>
+
+
+      <!-- POWER -->
+
+      <article class="telemetry-card">
+
+        <span class="telemetry-label">
+          POWER
+        </span>
+
+        <div class="telemetry-reading">
+
+          <strong id="telemetryPower">
+            --
+          </strong>
+
+          <small>
+            kW
+          </small>
+
+        </div>
+
+      </article>
+
+
+      <!-- TORQUE -->
+
+      <article class="telemetry-card">
+
+        <span class="telemetry-label">
+          TORQUE
+        </span>
+
+        <div class="telemetry-reading">
+
+          <strong id="telemetryTorque">
+            --
+          </strong>
+
+          <small>
+            Nm
+          </small>
+
+        </div>
+
+      </article>
+
+
+      <!-- AVG CHT -->
+
+      <article class="telemetry-card">
+
+        <span class="telemetry-label">
+          AVG CHT
+        </span>
+
+        <div class="telemetry-reading">
+
+          <strong id="telemetryChtAverage">
+            --
+          </strong>
+
+          <small>
+            °C
+          </small>
+
+        </div>
+
+      </article>
+
+
+      <!-- AVG EGT -->
+
+      <article class="telemetry-card">
+
+        <span class="telemetry-label">
+          AVG EGT
+        </span>
+
+        <div class="telemetry-reading">
+
+          <strong id="telemetryEgtAverage">
+            --
+          </strong>
+
+          <small>
+            °C
+          </small>
+
+        </div>
+
+      </article>
+
+
+      <!-- OIL PRESSURE -->
+
+      <article class="telemetry-card">
+
+        <span class="telemetry-label">
+          OIL PRESSURE
+        </span>
+
+        <div class="telemetry-reading">
+
+          <strong id="telemetryOilPressure">
+            --
+          </strong>
+
+          <small>
+            kPa
+          </small>
+
+        </div>
+
+      </article>
+
+
+      <!-- FUEL -->
+
+      <article class="telemetry-card">
+
+        <span class="telemetry-label">
+          FUEL FLOW
+        </span>
+
+        <div class="telemetry-reading">
+
+          <strong id="telemetryFuelFlow">
+            --
+          </strong>
+
+          <small>
+            kg/s
+          </small>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- ===================================================
+         MAIN DIGITAL TWIN GRID
+
+         LEFT   = detailed telemetry
+         CENTER = Three.js canvas
+         RIGHT  = simulation inputs
+    ==================================================== -->
+
+    <section class="digital-twin-grid">
+
+
+      <!-- =================================================
+           LEFT PANEL
+           LIVE ENGINE TELEMETRY
+      ================================================== -->
+
+      <aside class="panel telemetry-panel">
+
+        <div class="panel-header">
+
+          <div>
+
+            <small>
+              SENSOR STATE
+            </small>
+
+            <h3>
+              Live Telemetry
+            </h3>
+
+          </div>
+
+
+          <span class="live-indicator">
+
+            <span class="status-dot"></span>
+
+            LIVE
+
+          </span>
+
+        </div>
+
+
+        <!-- THERMAL -->
+
+        <div class="telemetry-section">
+
+          <div class="section-title">
+            CYLINDER HEAD TEMPERATURE
+          </div>
+
+
+          <div class="cylinder-grid">
+
+            <div class="mini-reading">
+              <span>CHT 1</span>
+              <strong id="telemetryCht1">--</strong>
+              <small>°C</small>
+            </div>
+
+            <div class="mini-reading">
+              <span>CHT 2</span>
+              <strong id="telemetryCht2">--</strong>
+              <small>°C</small>
+            </div>
+
+            <div class="mini-reading">
+              <span>CHT 3</span>
+              <strong id="telemetryCht3">--</strong>
+              <small>°C</small>
+            </div>
+
+            <div class="mini-reading">
+              <span>CHT 4</span>
+              <strong id="telemetryCht4">--</strong>
+              <small>°C</small>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- EGT -->
+
+        <div class="telemetry-section">
+
+          <div class="section-title">
+            EXHAUST GAS TEMPERATURE
+          </div>
+
+
+          <div class="cylinder-grid">
+
+            <div class="mini-reading">
+              <span>EGT 1</span>
+              <strong id="telemetryEgt1">--</strong>
+              <small>°C</small>
+            </div>
+
+            <div class="mini-reading">
+              <span>EGT 2</span>
+              <strong id="telemetryEgt2">--</strong>
+              <small>°C</small>
+            </div>
+
+            <div class="mini-reading">
+              <span>EGT 3</span>
+              <strong id="telemetryEgt3">--</strong>
+              <small>°C</small>
+            </div>
+
+            <div class="mini-reading">
+              <span>EGT 4</span>
+              <strong id="telemetryEgt4">--</strong>
+              <small>°C</small>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- LUBRICATION -->
+
+        <div class="telemetry-section">
+
+          <div class="section-title">
+            LUBRICATION
+          </div>
+
+
+          <div class="telemetry-row">
+
+            <span>
+              Oil Pressure
+            </span>
+
+            <strong>
+              <span id="telemetryOilPressureDetail">
+                --
+              </span>
+              kPa
+            </strong>
+
+          </div>
+
+
+          <div class="telemetry-row">
+
+            <span>
+              Oil Temperature
+            </span>
+
+            <strong>
+              <span id="telemetryOilTemperature">
+                --
+              </span>
+              °C
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- VIBRATION -->
+
+        <div class="telemetry-section">
+
+          <div class="section-title">
+            VIBRATION
+          </div>
+
+
+          <div class="telemetry-row">
+
+            <span>
+              Overall
+            </span>
+
+            <strong>
+              <span id="telemetryVibration">
+                --
+              </span>
+              g
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- ELECTRICAL -->
+
+        <div class="telemetry-section">
+
+          <div class="section-title">
+            ELECTRICAL
+          </div>
+
+
+          <div class="telemetry-row">
+
+            <span>
+              Battery
+            </span>
+
+            <strong>
+              <span id="telemetryBatteryVoltage">
+                --
+              </span>
+              V
+            </strong>
+
+          </div>
+
+
+          <div class="telemetry-row">
+
+            <span>
+              Alternator
+            </span>
+
+            <strong>
+              <span id="telemetryAlternatorVoltage">
+                --
+              </span>
+              V
+            </strong>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+
+      <!-- =================================================
+           CENTER
+           X4.10 SIMULATION CANVAS
+      ================================================== -->
+
+      <section class="panel engine-panel">
+
+
+        <div class="panel-header">
+
+          <div>
+
+            <small>
+              SYNCHRONIZED VIRTUAL MODEL
+            </small>
+
+            <h3>
+              X4.10 Engine Digital Twin
+            </h3>
+
+          </div>
+
+
+          <div class="canvas-status">
+
+            <span class="status-dot"></span>
+
+            <span id="engineStateText">
+              READY
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================================
+             THREE.JS CANVAS HOST
+
+             IMPORTANT:
+             Existing IDs retained.
+        ================================================ -->
+<div
+          class="simulation-stage"
+          id="simulationStage"
+        >
+
+          <div
+            id="engineCanvasHost"
+            class="engine-canvas-host"
+            aria-label="PRATIRUP interactive engine simulation"
+          >
+
+            <div
+              id="simBootMessage"
+              class="canvas-placeholder"
+            >
+
+              <div class="canvas-reticle"></div>
+
+
+              <div class="placeholder-copy">
+
+                <span>
+                  DIGITAL TWIN CANVAS
+                </span>
+
+                <strong>
+                  X4.10 ENGINE MODEL
+                </strong>
+
+                <p>
+                  Initializing Three.js engine...
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CANVAS CHIPS -->
+
+          <div class="canvas-chip canvas-chip-left">
+
+            <span>
+              MODEL
+            </span>
+
+            <strong>
+              X4.10
+            </strong>
+
+          </div>
+
+
+          <div class="canvas-chip canvas-chip-right">
+
+            <span>
+              VIEW
+            </span>
+
+            <strong id="currentViewText">
+              ASSEMBLED
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================================
+             ENGINE VISUAL CONTROLS
+        ================================================ -->
+
+        <div class="simulation-controls">
+
+
+          <div class="control-group">
+
+
+            <!-- RUN -->
+
+            <button
+              type="button"
+              class="control-button primary"
+              id="runEngineButton"
+            >
+
+              <span class="button-icon">
+                ▶
+              </span>
+
+              RUN
+
+            </button>
+
+
+            <!-- RPM -->
+
+            <div class="rpm-control">
+
+              <div class="rpm-heading">
+
+                <span>
+                  RPM
+                </span>
+
+                <strong id="rpmDisplay">
+                  2200
+                </strong>
+
+              </div>
+
+
+              <input
+                id="rpmSlider"
+                type="range"
+                min="0"
+                max="4500"
+                step="50"
+                value="2200"
+              />
+
+            </div>
+
+          </div>
+
+
+          <!-- VISUAL ACTIONS -->
+
+          <div class="control-group action-group">
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="explodeButton"
+            >
+              EXPLODED
+            </button>
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="wireframeButton"
+            >
+              WIREFRAME
+            </button>
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="labelsButton"
+            >
+              LABELS
+            </button>
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="coverButton"
+            >
+              COVER
+            </button>
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="detailsButton"
+            >
+              DETAILS
+            </button>
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="resetViewButton"
+            >
+              RESET VIEW
+            </button>
+
+
+            <button
+              type="button"
+              class="control-button accent"
+              id="expandViewButton"
+            >
+              EXPAND
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================================
+             COMPONENT INSPECTOR
+        ================================================ -->
+
+        <div
+          class="component-inspector"
+          id="componentInspector"
+        >
+
+          <div class="inspector-header">
+
+            <div>
+
+              <small>
+                COMPONENT INSPECTOR
+              </small>
+
+              <strong id="selectedComponentName">
+                NO COMPONENT SELECTED
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="inspector-actions">
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="focusComponentButton"
+            >
+              FOCUS
+            </button>
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="isolateComponentButton"
+            >
+              ISOLATE
+            </button>
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="restoreComponentsButton"
+            >
+              RESTORE
+            </button>
+
+
+            <button
+              type="button"
+              class="control-button"
+              id="clearComponentButton"
+            >
+              CLEAR
+            </button>
+
+
+          </div>
+
+
+          <p id="selectedComponentDescription">
+
+            Select an engine component directly
+            from the 3D model.
+
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           RIGHT PANEL
+           MISSION / SIMULATION INPUTS
+      ================================================== -->
+
+      <aside class="panel simulation-input-panel">
+
+
+        <div class="panel-header">
+
+          <div>
+
+            <small>
+              VIRTUAL TEST ENVIRONMENT
+            </small>
+
+            <h3>
+              Simulation Inputs
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- THROTTLE -->
+
+        <div class="simulation-control">
+
+          <div class="simulation-control-label">
+
+            <span>
+              THROTTLE
+            </span>
+
+            <strong id="simThrottleValue">
+              65 %
+            </strong>
+
+          </div>
+
+
+          <input
+            id="simThrottle"
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value="65"
+          />
+
+        </div>
+
+
+        <!-- LOAD -->
+
+        <div class="simulation-control">
+
+          <div class="simulation-control-label">
+
+            <span>
+              ENGINE LOAD
+            </span>
+
+            <strong id="simLoadValue">
+              60 %
+            </strong>
+
+          </div>
+
+
+          <input
+            id="simLoad"
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value="60"
+          />
+
+        </div>
+
+
+        <!-- ALTITUDE -->
+
+        <div class="simulation-control">
+
+          <div class="simulation-control-label">
+
+            <span>
+              ALTITUDE
+            </span>
+
+            <strong id="simAltitudeValue">
+              0 m
+            </strong>
+
+          </div>
+
+
+          <input
+            id="simAltitude"
+            type="range"
+            min="0"
+            max="11000"
+            step="100"
+            value="0"
+          />
+
+        </div>
+
+
+        <!-- TEMPERATURE -->
+
+        <div class="simulation-control">
+
+          <div class="simulation-control-label">
+
+            <span>
+              AMBIENT TEMP
+            </span>
+
+            <strong id="simTemperatureValue">
+              15 °C
+            </strong>
+
+          </div>
+
+
+          <input
+            id="simTemperature"
+            type="range"
+            min="-40"
+            max="60"
+            step="1"
+            value="15"
+          />
+
+        </div>
+
+
+        <!-- MISSION MODE -->
+
+        <div class="simulation-control">
+
+          <div class="simulation-control-label">
+
+            <span>
+              MISSION MODE
+            </span>
+
+            <strong id="simMissionModeValue">
+              IDLE
+            </strong>
+
+          </div>
+
+
+          <select id="simMissionMode">
+
+            <option value="idle">
+              Idle
+            </option>
+
+            <option value="takeoff">
+              Takeoff
+            </option>
+
+            <option value="climb">
+              Climb
+            </option>
+
+            <option value="cruise">
+              Cruise
+            </option>
+
+            <option value="endurance">
+              Endurance
+            </option>
+
+            <option value="descent">
+              Descent
+            </option>
+
+            <option value="landing">
+              Landing
+            </option>
+
+            <option value="test">
+              Test
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- ENVIRONMENT OUTPUT -->
+
+        <div class="environment-summary">
+
+          <div class="section-title">
+            CALCULATED ENVIRONMENT
+          </div>
+
+
+          <div class="telemetry-row">
+
+            <span>
+              Altitude
+            </span>
+
+            <strong>
+
+              <span id="telemetryAltitude">
+                0
+              </span>
+
+              m
+
+            </strong>
+
+          </div>
+
+
+          <div class="telemetry-row">
+
+            <span>
+              Ambient Temp
+            </span>
+
+            <strong>
+
+              <span id="telemetryAmbientTemp">
+                15
+              </span>
+
+              °C
+
+            </strong>
+
+          </div>
+
+
+          <div class="telemetry-row">
+
+            <span>
+              Ambient Pressure
+            </span>
+
+            <strong>
+
+              <span id="telemetryAmbientPressure">
+                --
+              </span>
+
+              kPa
+
+            </strong>
+
+          </div>
+
+
+          <div class="telemetry-row">
+
+            <span>
+              Air Density
+            </span>
+
+            <strong>
+
+              <span id="telemetryAirDensity">
+                --
+              </span>
+
+              kg/m³
+
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- MISSION ACTIONS -->
+
+        <div class="simulation-control-actions">
+
+          <button
+            type="button"
+            id="simMissionButton"
+            class="control-button primary"
+          >
+            START MISSION
+          </button>
+
+
+          <button
+            type="button"
+            id="simResetButton"
+            class="control-button"
+          >
+            RESET INPUTS
+          </button>
+
+        </div>
+
+      </aside>
+
+    </section>
+
+
+<!-- =========================================================
+     UAV MISSION SIMULATION CANVAS
+     Dedicated Three.js host for js/uav.js
+========================================================= -->
+<section
+  class="panel uav-mission-panel"
+  id="uavMissionSimulationSection"
+  data-scroll-section
+  aria-labelledby="uavMissionSimulationTitle"
+>
+  <div class="uav-mission-panel-head">
+    <div>
+      <small>MISSION-AWARE FLIGHT VISUALIZATION</small>
+      <h3 id="uavMissionSimulationTitle">MALE UAV Mission Simulation</h3>
+      <p>Live 3D mission context synchronized with PRATIRUP mission state, altitude, phase and propulsion telemetry.</p>
+    </div>
+    <div class="uav-mission-status" aria-live="polite">
+      <span class="status-dot"></span>
+      <strong id="uavVisualizationStatus">CONNECTING</strong>
+    </div>
+  </div>
+
+  <div class="uav-mission-stage">
+    <div
+      id="uavMissionCanvasHost"
+      class="uav-mission-canvas-host"
+      aria-label="PRATIRUP MALE UAV Three.js mission simulation"
+    ></div>
+
+    <div class="uav-stage-chip uav-stage-chip-left">
+      <span>PLATFORM</span>
+      <strong>MALE UAV</strong>
+    </div>
+
+    <div class="uav-stage-chip uav-stage-chip-right">
+      <span>MISSION</span>
+      <strong data-mission-phase>--</strong>
+    </div>
+  </div>
+</section>
+
+<section class="mission-control-panel" id="missionControlPanel">
+<div class="mission-control-head"><div><span class="mission-kicker">SIMULATION ORCHESTRATION</span><h3>Mission Control</h3></div><strong data-mission-connection>CONNECTING</strong></div>
+<div class="mission-control-row">
+<button type="button" class="mission-action primary" data-mission-action="play">▶ PLAY</button>
+<button type="button" class="mission-action" data-mission-action="pause">Ⅱ PAUSE</button>
+<button type="button" class="mission-action" data-mission-action="resume">▶ RESUME</button>
+<button type="button" class="mission-action danger" data-mission-action="stop">■ STOP</button>
+<button type="button" class="mission-action" data-mission-action="restart">↻ RESTART</button>
+<button type="button" class="mission-action" data-mission-action="reset">RESET</button></div>
+<div class="mission-control-row"><span class="mission-kicker">SPEED</span>
+<button type="button" class="mission-speed" data-mission-speed="0.5">0.5×</button><button type="button" class="mission-speed" data-mission-speed="1">1×</button><button type="button" class="mission-speed" data-mission-speed="2">2×</button><button type="button" class="mission-speed" data-mission-speed="5">5×</button></div>
+<div class="mission-meta"><div><span>STATE</span><strong data-mission-state>--</strong></div><div><span>PHASE</span><strong data-mission-phase>--</strong></div><div><span>ELAPSED</span><strong><span data-mission-elapsed>0</span> s</strong></div><div><span>SPEED</span><strong><span data-mission-speed-value>1</span>×</strong></div></div>
+<div class="mission-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="mission-progress-fill" data-mission-progress-bar></div></div>
+<div class="fault-status-line"><span>MISSION PROGRESS</span><strong><span data-mission-progress>0</span>%</strong></div>
+<div class="mission-phases"><span>ENGINE START</span><span>WARMUP</span><span>TAKEOFF</span><span>CLIMB</span><span>CRUISE</span><span>HIGH ALTITUDE</span><span>DESCENT</span><span>LANDING</span><span>SHUTDOWN</span></div>
+<div class="fault-box"><span class="mission-kicker">CONTROLLED TEST ENVIRONMENT</span><h3>Fault Injection</h3>
+<div class="fault-grid"><div class="fault-field"><label>FAULT MODEL</label><select data-mission-fault-type><option value="OIL_PRESSURE_LOSS">Oil Pressure Loss</option><option value="COOLING_DEGRADATION">Cooling Degradation</option><option value="EGT_IMBALANCE">EGT Imbalance</option><option value="FUEL_PRESSURE_LOSS">Fuel Pressure Loss</option><option value="VIBRATION_INCREASE">Vibration Increase</option></select></div>
+<div class="fault-field"><label>SEVERITY (0–1)</label><input data-mission-fault-severity type="number" min="0" max="1" step="0.1" value="0.8"></div>
+<div class="fault-field"><label>RAMP (SEC)</label><input data-mission-fault-ramp type="number" min="0" step="1" value="0"></div></div>
+<div class="mission-control-row"><button type="button" class="mission-action danger" data-mission-inject-fault>INJECT FAULT</button><button type="button" class="mission-action" data-mission-clear-faults>CLEAR ALL FAULTS</button></div>
+
+<p class="mission-disclaimer">PRATIRUP engineering-demonstrator fault models modify simulated telemetry only. They do not force diagnostic, maintenance or mission-readiness results and are not official DRDO/VRDE limits.</p></div></section>
+
+    <!-- ===================================================
+         STAGE 4D-D4 — HISTORICAL REPLAY DASHBOARD
+
+         IMPORTANT:
+         - Historical replay is READ-ONLY.
+         - Replay is controlled by mission-replay.js v2.0.0.
+         - Replay frames arrive through the shared /ws bridge.
+         - Replay frames are NEVER POSTed to /api/telemetry.
+    ==================================================== -->
+
+    <section
+      class="historical-replay-panel"
+      id="historicalReplayPanel"
+      aria-labelledby="historicalReplayTitle"
+    >
+
+      <div class="historical-replay-header">
+
+        <div class="historical-replay-heading">
+
+          <span class="historical-replay-kicker">
+            POST-FLIGHT / HISTORICAL ANALYSIS
+          </span>
+
+          <div class="historical-replay-title-row">
+
+            <h3 id="historicalReplayTitle">
+              Historical Mission Replay
+            </h3>
+
+            <span
+              class="historical-replay-badge"
+              data-replay-ui-badge
+            >
+              REPLAY INACTIVE
+            </span>
+
+          </div>
+
+          <p>
+            Load a completed historical mission and replay its
+            recorded engine telemetry through the same canonical
+            Digital Twin visualization path.
+          </p>
+
+        </div>
+
+
+        <div class="historical-replay-connection">
+
+          <div class="replay-connection-item">
+
+            <span>
+              BACKEND
+            </span>
+
+            <strong data-replay-backend-status>
+              CHECKING
+            </strong>
+
+          </div>
+
+
+          <div class="replay-connection-item">
+
+            <span>
+              WEBSOCKET
+            </span>
+
+            <strong data-replay-websocket-status>
+              CHECKING
+            </strong>
+
+          </div>
+
+
+          <div class="replay-connection-item">
+
+            <span>
+              SOURCE MODE
+            </span>
+
+            <strong data-replay-source-mode>
+              AUTO
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- MISSION LOAD -->
+
+      <div class="historical-replay-load-row">
+
+        <div class="historical-replay-field historical-replay-field-grow">
+
+          <label for="historicalReplayMissionId">
+            HISTORICAL MISSION ID
+          </label>
+
+          <input
+            id="historicalReplayMissionId"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Enter historical mission UUID"
+            data-replay-mission-id-input
+          />
+
+        </div>
+
+
+        <button
+          type="button"
+          class="historical-replay-action historical-replay-action-primary"
+          data-replay-action="load"
+        >
+          LOAD REPLAY
+        </button>
+
+      </div>
+
+
+      <!-- MISSION IDENTITY / STATE -->
+
+      <div class="historical-replay-meta-grid">
+
+        <div class="historical-replay-meta-card">
+
+          <span>
+            REPLAY STATE
+          </span>
+
+          <strong data-replay-state>
+            EMPTY
+          </strong>
+
+        </div>
+
+
+        <div class="historical-replay-meta-card">
+
+          <span>
+            MISSION CODE
+          </span>
+
+          <strong data-replay-mission-code>
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="historical-replay-meta-card">
+
+          <span>
+            PHASE
+          </span>
+
+          <strong data-replay-phase>
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="historical-replay-meta-card">
+
+          <span>
+            SEQUENCE
+          </span>
+
+          <strong data-replay-sequence-display>
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="historical-replay-meta-card">
+
+          <span>
+            ORIGINAL SOURCE
+          </span>
+
+          <strong data-replay-original-source-display>
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="historical-replay-meta-card">
+
+          <span>
+            SPEED
+          </span>
+
+          <strong>
+            <span data-replay-speed-display>1</span>×
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- REPLAY CONTROLS -->
+
+      <div class="historical-replay-controls">
+
+        <div class="historical-replay-control-group">
+
+          <button
+            type="button"
+            class="historical-replay-action historical-replay-action-primary"
+            data-replay-action="play"
+          >
+            ▶ PLAY
+          </button>
+
+
+          <button
+            type="button"
+            class="historical-replay-action"
+            data-replay-action="pause"
+          >
+            Ⅱ PAUSE
+          </button>
+
+
+          <button
+            type="button"
+            class="historical-replay-action"
+            data-replay-action="resume"
+          >
+            ▶ RESUME
+          </button>
+
+
+          <button
+            type="button"
+            class="historical-replay-action"
+            data-replay-action="reset"
+          >
+            ↺ RESET
+          </button>
+
+
+          <button
+            type="button"
+            class="historical-replay-action historical-replay-action-danger"
+            data-replay-action="stop"
+          >
+            ■ STOP
+          </button>
+
+        </div>
+
+
+        <div class="historical-replay-speed-group">
+
+          <span>
+            PLAYBACK SPEED
+          </span>
+
+          <button
+            type="button"
+            class="historical-replay-speed"
+            data-replay-speed="0.5"
+          >
+            0.5×
+          </button>
+
+          <button
+            type="button"
+            class="historical-replay-speed"
+            data-replay-speed="1"
+          >
+            1×
+          </button>
+
+          <button
+            type="button"
+            class="historical-replay-speed"
+            data-replay-speed="2"
+          >
+            2×
+          </button>
+
+          <button
+            type="button"
+            class="historical-replay-speed"
+            data-replay-speed="5"
+          >
+            5×
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- TIMELINE -->
+
+      <div class="historical-replay-timeline">
+
+        <div class="historical-replay-timeline-head">
+
+          <span>
+            MISSION TIMELINE
+          </span>
+
+          <strong>
+            <span data-replay-progress>0.0</span>%
+          </strong>
+
+        </div>
+
+
+        <input
+          id="historicalReplayTimeline"
+          type="range"
+          min="0"
+          max="100"
+          step="0.1"
+          value="0"
+          aria-label="Historical replay mission position"
+          data-replay-timeline
+        />
+
+
+        <div class="historical-replay-timeline-meta">
+
+          <span>
+            FRAME
+            <strong data-replay-frame-index>—</strong>
+          </span>
+
+          <span>
+            TOTAL
+            <strong data-replay-frame-count>—</strong>
+          </span>
+
+          <span>
+            HISTORICAL TIME
+            <strong data-replay-historical-time>—</strong>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- HISTORICAL TELEMETRY -->
+
+      <div class="historical-replay-telemetry-grid">
+
+        <article class="historical-replay-telemetry-card">
+
+          <span>
+            ENGINE RPM
+          </span>
+
+          <strong data-replay-rpm>
+            —
+          </strong>
+
+          <small>
+            RPM
+          </small>
+
+        </article>
+
+
+        <article class="historical-replay-telemetry-card">
+
+          <span>
+            POWER
+          </span>
+
+          <strong data-replay-power>
+            —
+          </strong>
+
+          <small>
+            kW
+          </small>
+
+        </article>
+
+
+        <article class="historical-replay-telemetry-card">
+
+          <span>
+            AVG CHT
+          </span>
+
+          <strong data-replay-cht>
+            —
+          </strong>
+
+          <small>
+            °C
+          </small>
+
+        </article>
+
+
+        <article class="historical-replay-telemetry-card">
+
+          <span>
+            AVG EGT
+          </span>
+
+          <strong data-replay-egt>
+            —
+          </strong>
+
+          <small>
+            °C
+          </small>
+
+        </article>
+
+
+        <article class="historical-replay-telemetry-card">
+
+          <span>
+            OIL PRESSURE
+          </span>
+
+          <strong data-replay-oil-pressure>
+            —
+          </strong>
+
+          <small>
+            kPa
+          </small>
+
+        </article>
+
+
+        <article class="historical-replay-telemetry-card">
+
+          <span>
+            VIBRATION
+          </span>
+
+          <strong data-replay-vibration>
+            —
+          </strong>
+
+          <small>
+            g
+          </small>
+
+        </article>
+
+
+        <article class="historical-replay-telemetry-card">
+
+          <span>
+            ALTITUDE
+          </span>
+
+          <strong data-replay-altitude>
+            —
+          </strong>
+
+          <small>
+            m
+          </small>
+
+        </article>
+
+
+        <article class="historical-replay-telemetry-card">
+
+          <span>
+            ENGINE LOAD
+          </span>
+
+          <strong data-replay-load>
+            —
+          </strong>
+
+          <small>
+            %
+          </small>
+
+        </article>
+
+      </div>
+
+
+      <!-- ISOLATION / ARCHITECTURE -->
+
+      <div class="historical-replay-isolation">
+
+        <div class="historical-replay-isolation-head">
+
+          <div>
+
+            <span class="historical-replay-kicker">
+              REPLAY ISOLATION
+            </span>
+
+            <h4>
+              Read-Only Historical Pipeline
+            </h4>
+
+          </div>
+
+          <strong data-replay-isolation-status>
+            CHECKING
+          </strong>
+
+        </div>
+
+
+        <div class="historical-replay-isolation-grid">
+
+          <div>
+
+            <span>
+              DATABASE WRITES
+            </span>
+
+            <strong data-replay-database-writes>
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              PERSISTENCE
+            </span>
+
+            <strong data-replay-persistence>
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              LIVE INGESTION
+            </span>
+
+            <strong data-replay-live-ingestion>
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              MODEL REPROCESSING
+            </span>
+
+            <strong data-replay-model-reprocessing>
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <p>
+          Historical replay is visualization and post-flight analysis only.
+          Recorded frames remain isolated from live telemetry ingestion,
+          persistence and model reprocessing.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="operator-readiness-panel" id="operatorReadinessPanel" aria-labelledby="operatorReadinessTitle">
+  <div class="operator-readiness-header">
+    <div class="operator-readiness-title-area">
+      <span class="operator-readiness-kicker">ENGINEERING DECISION SUPPORT</span>
+      <h3 id="operatorReadinessTitle">Mission Readiness &amp; Propulsion Health</h3>
+      <p class="operator-readiness-subtitle">Backend-authoritative assessment of engine health, mission readiness and maintenance evidence.</p>
+    </div>
+    <div class="operator-decision-area">
+      <span class="operator-decision-label">OPERATOR DECISION</span>
+      <div class="operator-decision" id="operatorDecision" data-state="UNKNOWN" aria-live="polite">UNKNOWN</div>
+    </div>
+  </div>
+
+  <div class="operator-section-heading"><div><span class="operator-section-index">01</span><strong>Mission Readiness Assessment</strong></div><span class="operator-section-caption">Authoritative engineering state</span></div>
+  <div class="operator-readiness-grid">
+    <div class="operator-readiness-card"><span>ENGINEERING STATE</span><strong id="operatorEngineeringState">--</strong></div>
+    <div class="operator-readiness-card"><span>SEVERITY</span><strong id="operatorSeverity">--</strong></div>
+    <div class="operator-readiness-card"><span>READINESS SCORE</span><strong id="operatorReadinessScore">--</strong></div>
+    <div class="operator-readiness-card"><span>CONFIDENCE</span><strong id="operatorConfidence">--</strong></div>
+    <div class="operator-readiness-card"><span>SENSOR COVERAGE</span><strong id="operatorSensorCoverage">--</strong></div>
+    <div class="operator-readiness-card"><span>READINESS FACTORS</span><strong id="operatorFactorCount">--</strong></div>
+    <div class="operator-readiness-card"><span>BLOCKING FACTORS</span><strong id="operatorBlockingFactorCount">--</strong></div>
+    <div class="operator-readiness-card"><span>MISSION DECISION</span><strong id="operatorDecisionMirror">--</strong></div>
+  </div>
+
+  <div class="operator-section-heading"><div><span class="operator-section-index">02</span><strong>Engine Health Intelligence</strong></div><span class="operator-section-caption">Diagnostics &amp; prognostics</span></div>
+  <div class="operator-readiness-grid operator-health-grid">
+    <div class="operator-readiness-card"><span>FAULT STATE</span><strong id="operatorFaultState">--</strong></div>
+    <div class="operator-readiness-card"><span>DEGRADATION STATE</span><strong id="operatorDegradationState">--</strong></div>
+    <div class="operator-readiness-card"><span>RUL STATE</span><strong id="operatorRulState">--</strong></div>
+    <div class="operator-readiness-card"><span>MAINTENANCE STATE</span><strong id="operatorMaintenanceState">--</strong></div>
+  </div>
+
+  <div class="operator-section-heading"><div><span class="operator-section-index">03</span><strong>Mission Risk Assessment</strong></div><span class="operator-section-caption">Operator-facing risk indicators</span></div>
+  <div class="operator-readiness-risk-grid">
+    <div class="operator-risk-card"><span>MISSION RISK</span><strong id="operatorMissionRisk">--</strong><small>Combined mission-readiness risk</small></div>
+    <div class="operator-risk-card"><span>PROPULSION HEALTH RISK</span><strong id="operatorPropulsionRisk">--</strong><small>Engine-health related mission risk</small></div>
+    <div class="operator-risk-card"><span>ENVIRONMENTAL RISK</span><strong id="operatorEnvironmentalRisk">--</strong><small>Environmental contribution to mission risk</small></div>
+  </div>
+
+  <div class="operator-section-heading"><div><span class="operator-section-index">04</span><strong>Engineering Decision Evidence</strong></div><span class="operator-section-caption">Why this decision was produced</span></div>
+  <div class="operator-readiness-details">
+    <div class="operator-readiness-detail"><span>REASONS / SUPPORTING EVIDENCE</span><ul id="operatorReasons"><li>Waiting for authoritative readiness evidence.</li></ul></div>
+    <div class="operator-readiness-detail"><span>ENGINEERING RECOMMENDATION</span><p id="operatorRecommendation">Waiting for backend readiness assessment.</p></div>
+  </div>
+
+  <div class="operator-section-heading"><div><span class="operator-section-index">05</span><strong>Readiness Warnings</strong></div><span class="operator-section-caption">Backend-generated warnings</span></div>
+  <div class="operator-readiness-details operator-warning-grid">
+    <div class="operator-readiness-detail"><span>ACTIVE READINESS WARNINGS</span><ul id="operatorWarnings"><li>No readiness warning reported.</li></ul></div>
+    <div class="operator-readiness-detail"><span>AUTHORIZATION STATUS</span><div class="operator-authorization-status"><strong>AUTOMATIC FLIGHT AUTHORIZATION</strong><b>DISABLED</b></div><p class="operator-authorization-description">PRATIRUP provides engineering decision support. Mission release and flight authorization remain under authorized human and operational procedures.</p></div>
+  </div>
+
+  <div class="operator-section-heading"><div><span class="operator-section-index">06</span><strong>Backend Readiness Factors</strong></div><span class="operator-section-caption">Evidence used by the readiness engine</span></div>
+  <div class="operator-readiness-detail operator-factor-section"><span>READINESS FACTOR EVIDENCE</span><div id="operatorFactors"><div class="operator-factor-empty">Waiting for readiness factors.</div></div></div>
+
+  <div class="operator-readiness-safety"><div class="operator-safety-primary">AUTOMATIC FLIGHT AUTHORIZATION: DISABLED</div><div class="operator-safety-secondary">PRATIRUP IS AN ENGINEERING DECISION-SUPPORT DIGITAL TWIN — NOT AN AUTONOMOUS FLIGHT AUTHORIZATION SYSTEM</div></div>
+  <div class="operator-readiness-footer"><span>BACKEND AUTHORITATIVE</span><span>READ-ONLY PRESENTATION</span><span>NO FRONTEND MODEL RERUN</span><span>NO DATABASE WRITES</span></div>
+
+</section>
+
+
+    <!-- ===================================================
+         H3 — HYBRID INTELLIGENCE DASHBOARD
+
+         Presentation-only consumer of the H2 state adapter.
+
+         Authority contract:
+         - Digital Twin / Physics / Diagnostics / Readiness:
+           EXISTING CORE
+         - ML / Hybrid Fusion:
+           ADVISORY ONLY
+         - Automatic Flight Authorization:
+           FALSE
+    ==================================================== -->
+
+    <section
+      class="panel hybrid-intelligence-panel"
+      id="hybridIntelligencePanel"
+      aria-labelledby="hybridIntelligenceTitle"
+    >
+
+      <div class="hybrid-panel-header">
+
+        <div>
+
+          <small>
+            PHYSICS + AI/ML DECISION SUPPORT
+          </small>
+
+          <h3 id="hybridIntelligenceTitle">
+            Hybrid Intelligence
+          </h3>
+
+          <p class="hybrid-subtitle">
+            Backend evidence comparison for engineering review.
+            ML and hybrid fusion remain advisory only.
+          </p>
+
+        </div>
+
+
+        <div
+          class="hybrid-status-pill"
+          id="hybridIntegrationBadge"
+          data-tone="neutral"
+        >
+
+          <span class="hybrid-status-dot"></span>
+
+          <strong id="hybridIntegrationStatus">
+            WAITING
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- SUMMARY -->
+
+      <div class="hybrid-summary-grid">
+
+        <article class="hybrid-summary-card">
+
+          <span class="hybrid-card-label">
+            DATA SOURCE
+          </span>
+
+          <strong id="hybridSource">
+            --
+          </strong>
+
+          <small>
+            Backend integration source
+          </small>
+
+        </article>
+
+
+        <article class="hybrid-summary-card">
+
+          <span class="hybrid-card-label">
+            ML FEATURES
+          </span>
+
+          <strong id="hybridFeatureCount">
+            --
+          </strong>
+
+          <small>
+            Frozen feature contract
+          </small>
+
+        </article>
+
+
+        <article class="hybrid-summary-card">
+
+          <span class="hybrid-card-label">
+            READINESS
+          </span>
+
+          <strong
+            id="hybridReadinessState"
+            data-tone="neutral"
+          >
+            --
+          </strong>
+
+          <small>
+            Existing Core authority
+          </small>
+
+        </article>
+
+
+        <article class="hybrid-summary-card">
+
+          <span class="hybrid-card-label">
+            OPERATOR STATE
+          </span>
+
+          <strong
+            id="hybridOperatorState"
+            data-tone="neutral"
+          >
+            --
+          </strong>
+
+          <small>
+            Engineering decision support
+          </small>
+
+        </article>
+
+      </div>
+
+
+      <!-- MAIN INTELLIGENCE -->
+
+      <div class="hybrid-main-grid">
+
+
+        <!-- 01 — ML ANOMALY -->
+
+        <article class="hybrid-intelligence-card">
+
+          <div class="hybrid-card-heading">
+
+            <div>
+
+              <span class="hybrid-card-index">
+                01
+              </span>
+
+              <div>
+
+                <small>
+                  FROZEN ML MODEL
+                </small>
+
+                <h4>
+                  ML Anomaly
+                </h4>
+
+              </div>
+
+            </div>
+
+
+            <span
+              class="hybrid-state-chip"
+              id="hybridMLAnomalyChip"
+              data-tone="neutral"
+            >
+              WAITING
+            </span>
+
+          </div>
+
+
+          <div class="hybrid-primary-value">
+
+            <strong id="hybridMLAnomalyState">
+              --
+            </strong>
+
+            <span>
+              Prediction
+            </span>
+
+          </div>
+
+
+          <div class="hybrid-confidence-row">
+
+            <span>
+              Confidence
+            </span>
+
+            <strong id="hybridMLAnomalyConfidence">
+              --
+            </strong>
+
+          </div>
+
+
+          <div class="hybrid-progress-track">
+
+            <div
+              class="hybrid-progress-fill"
+              id="hybridMLAnomalyConfidenceBar"
+             
+            ></div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 02 — ML FAULT -->
+
+        <article class="hybrid-intelligence-card">
+
+          <div class="hybrid-card-heading">
+
+            <div>
+
+              <span class="hybrid-card-index">
+                02
+              </span>
+
+              <div>
+
+                <small>
+                  FROZEN ML MODEL
+                </small>
+
+                <h4>
+                  ML Fault Class
+                </h4>
+
+              </div>
+
+            </div>
+
+
+            <span
+              class="hybrid-state-chip"
+              id="hybridMLFaultChip"
+              data-tone="neutral"
+            >
+              WAITING
+            </span>
+
+          </div>
+
+
+          <div class="hybrid-primary-value">
+
+            <strong id="hybridMLFaultState">
+              --
+            </strong>
+
+            <span>
+              Predicted class
+            </span>
+
+          </div>
+
+
+          <div class="hybrid-confidence-row">
+
+            <span>
+              Confidence
+            </span>
+
+            <strong id="hybridMLFaultConfidence">
+              --
+            </strong>
+
+          </div>
+
+
+          <div class="hybrid-progress-track">
+
+            <div
+              class="hybrid-progress-fill"
+              id="hybridMLFaultConfidenceBar"
+             
+            ></div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 03 — EVIDENCE FUSION -->
+
+        <article class="hybrid-intelligence-card hybrid-fusion-card">
+
+          <div class="hybrid-card-heading">
+
+            <div>
+
+              <span class="hybrid-card-index">
+                03
+              </span>
+
+              <div>
+
+                <small>
+                  PHYSICS + ML
+                </small>
+
+                <h4>
+                  Evidence Fusion
+                </h4>
+
+              </div>
+
+            </div>
+
+
+            <span
+              class="hybrid-state-chip"
+              id="hybridFusionChip"
+              data-tone="neutral"
+            >
+              WAITING
+            </span>
+
+          </div>
+
+
+          <div class="hybrid-evidence-row">
+
+            <span>
+              Anomaly Fusion
+            </span>
+
+            <strong
+              id="hybridAnomalyFusionState"
+              data-tone="neutral"
+            >
+              --
+            </strong>
+
+          </div>
+
+
+          <div class="hybrid-evidence-row">
+
+            <span>
+              Fault Fusion
+            </span>
+
+            <strong
+              id="hybridFaultFusionState"
+              data-tone="neutral"
+            >
+              --
+            </strong>
+
+          </div>
+
+
+          <div class="hybrid-authority-note">
+            ML evidence is advisory. Physics and diagnostic
+            authority remain with the existing Digital Twin Core.
+          </div>
+
+        </article>
+
+
+        <!-- 04 — ENGINEERING REVIEW -->
+
+        <article
+          class="hybrid-intelligence-card hybrid-review-card"
+          id="hybridEngineeringReviewCard"
+          data-tone="neutral"
+        >
+
+          <div class="hybrid-card-heading">
+
+            <div>
+
+              <span class="hybrid-card-index">
+                04
+              </span>
+
+              <div>
+
+                <small>
+                  EVIDENCE REVIEW
+                </small>
+
+                <h4>
+                  Engineering Review
+                </h4>
+
+              </div>
+
+            </div>
+
+
+            <span
+              class="hybrid-state-chip"
+              id="hybridEngineeringReviewBadge"
+              data-tone="neutral"
+            >
+              WAITING
+            </span>
+
+          </div>
+
+
+          <div class="hybrid-review-state">
+
+            <strong id="hybridEngineeringReviewState">
+              --
+            </strong>
+
+          </div>
+
+
+          <p id="hybridEngineeringReviewReason">
+            Waiting for backend hybrid evidence.
+          </p>
+
+        </article>
+
+      </div>
+
+
+      <!-- AUTHORITY / SAFETY -->
+
+      <div class="hybrid-authority-grid">
+
+        <div>
+
+          <span>
+            DIGITAL TWIN
+          </span>
+
+          <strong id="hybridTwinAuthority">
+            EXISTING CORE
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            PHYSICS
+          </span>
+
+          <strong id="hybridPhysicsAuthority">
+            EXISTING CORE
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            ML
+          </span>
+
+          <strong id="hybridMLAuthority">
+            ADVISORY ONLY
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            HYBRID FUSION
+          </span>
+
+          <strong id="hybridFusionAuthority">
+            ADVISORY ONLY
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            FLIGHT AUTHORIZATION
+          </span>
+
+          <strong
+            id="hybridFlightAuthorization"
+            data-tone="danger"
+          >
+            FALSE
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="hybrid-footer">
+
+        <span>
+          PRATIRUP Engineering Demonstrator
+        </span>
+
+        <span id="hybridLastUpdate">
+          No hybrid data received
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         DIGITAL TWIN STATUS
+    ==================================================== -->
+
+    <section class="twin-status-grid">
+
+
+      <!-- MODEL STATE -->
+
+      <article class="info-panel">
+
+        <div class="info-panel-header">
+
+          <span>
+            DIGITAL TWIN
+          </span>
+
+          <strong>
+            ACTIVE
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Data Source
+          </span>
+
+          <strong id="twinSourceDetail">
+            SIMULATION
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Synchronization
+          </span>
+
+          <strong id="twinSynchronization">
+            READY
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Physics Model
+          </span>
+
+          <strong id="physicsModelState">
+            CONNECTED
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Model Confidence
+          </span>
+
+          <strong>
+
+            <span id="twinModelConfidence">
+              --
+            </span>
+
+            %
+
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- MECHANICAL STATE -->
+
+      <article class="info-panel">
+
+        <div class="info-panel-header">
+
+          <span>
+            ENGINE MODEL
+          </span>
+
+          <strong id="animationStateText">
+            STOPPED
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Exploded View
+          </span>
+
+          <strong id="explodedStateText">
+            OFF
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Wireframe
+          </span>
+
+          <strong id="wireframeStateText">
+            OFF
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Component Labels
+          </span>
+
+          <strong id="labelStateText">
+            OFF
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Transparent Cover
+          </span>
+
+          <strong id="coverStateText">
+            VISIBLE
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Detail Layers
+          </span>
+
+          <strong id="detailStateText">
+            VISIBLE
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- INSPECTION -->
+
+      <article class="info-panel" id="inspectionSection" data-scroll-section="inspection">
+
+        <div class="info-panel-header">
+
+          <span>
+            INSPECTION
+          </span>
+
+          <strong id="inspectionModeText">
+            STANDARD
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Selected Component
+          </span>
+
+          <strong id="selectedComponentStatus">
+            NONE
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Isolation
+          </span>
+
+          <strong id="isolationStateText">
+            OFF
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Camera
+          </span>
+
+          <strong>
+            ORBIT / PAN / ZOOM
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- FUTURE HEALTH -->
+
+      <article class="info-panel health-preview" id="engineHealthSection" data-scroll-section="health">
+
+        <div class="info-panel-header">
+
+          <span>
+            ENGINE HEALTH
+          </span>
+
+          <strong id="healthState">
+            BASELINE
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Health Index
+          </span>
+
+          <strong id="healthIndex">
+            --
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Active Faults
+          </span>
+
+          <strong id="activeFaultCount">
+            0
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span>
+            Estimated RUL
+          </span>
+
+          <strong id="estimatedRul">
+            --
+          </strong>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+  
+
+    <!-- =========================================================
+         D9-H — LONG-DURATION SYNTHETIC ENGINE-LIFE STUDY
+         Computationally accelerated demonstrator hours only.
+    ========================================================== -->
+
+<!-- Modular fragment: D9-H Long-Duration Synthetic Engine-Life Dashboard. -->
+<section class="long-duration-panel" id="longDurationPanel" aria-labelledby="longDurationTitle">
+  <div class="long-duration-header">
+    <div>
+      <span class="long-duration-kicker">SYNTHETIC ENGINE-LIFE STUDY</span>
+      <h3 id="longDurationTitle">Long-Term Propulsion Health Analysis</h3>
+      <p class="long-duration-subtitle">Computationally accelerated engine-life visualization for degradation, projected synthetic RUL and maintenance-event analysis.</p>
+    </div>
+    <div class="long-duration-badge">ENGINEERING DEMONSTRATOR</div>
+  </div>
+
+  <div class="long-duration-summary">
+    <div class="long-duration-card engine-hours"><span>ENGINE HOURS</span><strong id="lifeStudyEngineHours">--</strong></div>
+    <div class="long-duration-card degradation"><span>SYNTHETIC WEAR</span><strong id="lifeStudyDegradation">--</strong></div>
+    <div class="long-duration-card rul"><span>PROJECTED SYNTHETIC RUL</span><strong id="lifeStudyRul">--</strong></div>
+    <div class="long-duration-card life-state"><span>LIFE STATE</span><strong id="lifeStudyState">--</strong></div>
+    <div class="long-duration-card maintenance"><span>LATEST MAINTENANCE</span><strong id="lifeStudyMaintenance">NONE</strong></div>
+  </div>
+
+  <div class="long-duration-section-heading"><strong>ENGINE-LIFE PROGRESSION</strong><span>Compressed synthetic operating time</span></div>
+  <div class="engine-life-progress">
+    <div class="engine-life-progress-track"><div class="engine-life-progress-fill" id="engineLifeProgressFill"></div></div>
+    <div class="engine-life-scale"><span>0 h</span><span>100 h</span><span>250 h</span><span>500 h</span><span>800 h</span><span>1000 h</span></div>
+  </div>
+
+  <div class="long-duration-section-heading"><strong>LIFECYCLE TRENDS</strong><span>Visualization only</span></div>
+  <div class="long-duration-chart-grid">
+    <div class="long-duration-chart-card">
+      <div class="long-duration-chart-title"><strong>Synthetic Degradation</strong><span>% vs engine hours</span></div>
+      <canvas class="long-duration-chart" id="degradationLifeChart" width="640" height="220"></canvas>
+    </div>
+    <div class="long-duration-chart-card">
+      <div class="long-duration-chart-title"><strong>Synthetic RUL Projection</strong><span>hours remaining</span></div>
+      <canvas class="long-duration-chart" id="rulLifeChart" width="640" height="220"></canvas>
+    </div>
+  </div>
+
+  <div class="long-duration-section-heading"><strong>SYNTHETIC WEAR CHANNELS</strong><span>Normalized demonstrator indicators</span></div>
+  <div class="long-duration-wear-grid">
+    <div class="long-duration-wear-card"><span>THERMAL</span><strong id="wearThermalValue">--</strong><div class="long-duration-wear-track"><div class="long-duration-wear-fill" id="wearThermalFill"></div></div></div>
+    <div class="long-duration-wear-card"><span>LUBRICATION</span><strong id="wearLubricationValue">--</strong><div class="long-duration-wear-track"><div class="long-duration-wear-fill" id="wearLubricationFill"></div></div></div>
+    <div class="long-duration-wear-card"><span>VIBRATION</span><strong id="wearVibrationValue">--</strong><div class="long-duration-wear-track"><div class="long-duration-wear-fill" id="wearVibrationFill"></div></div></div>
+    <div class="long-duration-wear-card"><span>EFFICIENCY</span><strong id="wearEfficiencyValue">--</strong><div class="long-duration-wear-track"><div class="long-duration-wear-fill" id="wearEfficiencyFill"></div></div></div>
+    <div class="long-duration-wear-card"><span>COMBUSTION</span><strong id="wearCombustionValue">--</strong><div class="long-duration-wear-track"><div class="long-duration-wear-fill" id="wearCombustionFill"></div></div></div>
+  </div>
+
+  <div class="long-duration-section-heading"><strong>MAINTENANCE EVENT TIMELINE</strong><span>Synthetic study events</span></div>
+  <div class="long-duration-maintenance" id="longDurationMaintenanceTimeline"><div class="long-duration-maintenance-empty">No synthetic maintenance events recorded.</div></div>
+
+  <div class="long-duration-safety">
+    <strong>SYNTHETIC LIFE-STUDY DATA</strong>
+    <p>Engine hours shown here are computationally accelerated synthetic study hours. They are not measured physical engine hours, an official VRDE service-life limit, a certified RUL prediction, or automatic flight authorization.</p>
+  </div>
+</section>
+
+</main>
+
+</div>
+<!-- =========================================================
+     PRATIRUP — OFFICIAL TEAM FOOTER
+     Place this at the bottom of the dashboard content
+     ========================================================= -->
+
+<footer class="team-footer" id="teamFooter">
+
+    <div class="team-footer-inner">
+
+        <!-- =================================================
+             OFFICIAL TEAM LOGO
+             ================================================= -->
+        <div class="team-footer-brand">
+
+            <div class="team-logo-frame">
+                <img
+                    src="assets/images/qubitx-logo.png"
+                    alt="QubitX Official Team Logo"
+                    class="team-official-logo"
+                >
+            </div>
+
+            <div class="team-brand-content">
+                <span class="team-brand-label">
+                    OFFICIAL TEAM
+                </span>
+
+                <h2 class="team-brand-name">
+                    QubitX
+                </h2>
+
+                <p class="team-project-name">
+                    Team behind PRATIRUP
+                </p>
+
+                <p class="team-project-description">
+                    AI-Powered Digital Twin for Aero-Piston Engine
+                    Health Intelligence
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TEAM MEMBERS
+             ================================================= -->
+        <div class="team-members-section">
+
+            <div class="team-members-heading">
+                <span class="team-members-eyebrow">
+                    TEAM
+                </span>
+
+                <h3>
+                    Team Members
+                </h3>
+            </div>
+
+
+            <div class="team-members-grid">
+
+                <!-- MEMBER 01 -->
+                <article class="team-member-card">
+                    <span class="team-member-number">
+                        01
+                    </span>
+
+                    <div class="team-member-info">
+                        <strong>
+                            RISHABH MISHRA
+                        </strong>
+
+                        <span>
+                            Team Member
+                        </span>
+                    </div>
+                </article>
+
+
+                <!-- MEMBER 02 -->
+                <article class="team-member-card">
+                    <span class="team-member-number">
+                        02
+                    </span>
+
+                    <div class="team-member-info">
+                        <strong>
+                           PUSHKKAL GUPTA
+                        </strong>
+
+                        <span>
+                            Team Member
+                        </span>
+                    </div>
+                </article>
+
+
+                <!-- MEMBER 03 -->
+                <article class="team-member-card">
+                    <span class="team-member-number">
+                        03
+                    </span>
+
+                    <div class="team-member-info">
+                        <strong>
+                           KHUSHI GUPTA 
+                        </strong>
+
+                        <span>
+                            Team Member
+                        </span>
+                    </div>
+                </article>
+
+
+                <!-- MEMBER 04 -->
+                <article class="team-member-card">
+                    <span class="team-member-number">
+                        04
+                    </span>
+
+                    <div class="team-member-info">
+                        <strong>
+                           RISHABH RASTOGI
+                        </strong>
+
+                        <span>
+                            Team Member
+                        </span>
+                    </div>
+                </article>
+
+
+                <!-- MEMBER 05 -->
+                <article class="team-member-card">
+                    <span class="team-member-number">
+                        05
+                    </span>
+
+                    <div class="team-member-info">
+                        <strong>
+                           SHRADDHA BHUSHAN 
+                        </strong>
+
+                        <span>
+                            Team Member
+                        </span>
+                    </div>
+                </article>
+
+
+                <!-- MEMBER 06 -->
+                <article class="team-member-card">
+                    <span class="team-member-number">
+                        06
+                    </span>
+
+                    <div class="team-member-info">
+                        <strong>
+                           RISHI KUMAR
+                        </strong>
+
+                        <span>
+                            Team Member
+                        </span>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER BOTTOM STRIP
+         ===================================================== -->
+    <div class="team-footer-bottom">
+
+        <div class="team-footer-project">
+            <span class="footer-status-dot"></span>
+
+            <span>
+                PRATIRUP
+            </span>
+
+            <span class="footer-separator">
+                /
+            </span>
+
+            <span>
+                Problem Statement 26054
+            </span>
+        </div>
+
+
+        <div class="team-footer-credit">
+            Designed &amp; Developed by
+            <strong>Team QubitX</strong>
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+<!-- Three.js import map — shared by module files -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<!-- 01. BACKEND / TELEMETRY FOUNDATION -->
+<script src="js/backend-client.js"></script>
+<script src="js/telemetry-schema.js"></script>
+<script src="js/telemetry-bridge.js"></script>
+<script src="js/telemetry-websocket-bridge.js"></script>
+
+<!-- 02. SIMULATION INPUT -->
+<script src="js/simulation-adapter.js"></script>
+
+<!-- 03. DIGITAL TWIN CORE -->
+<script src="js/digital-twin-core.js"></script>
+
+<!-- 04. PHYSICS MODEL -->
+<script src="js/physics-model-interface.js"></script>
+<script src="js/engine-physics-model.js"></script>
+
+<!-- 05. HEALTH / DIAGNOSTICS -->
+<script src="js/health-monitor.js"></script>
+<script src="js/fault-detection-engine.js"></script>
+<script src="js/anomaly-detection.js"></script>
+<script src="js/fault-classifier.js"></script>
+
+<!-- 06. DEGRADATION / PROGNOSTICS -->
+<script src="js/degradation-tracker.js"></script>
+<script src="js/rul-engine.js"></script>
+<script src="js/predictive-maintenance.js"></script>
+
+<!-- 07. MISSION INTELLIGENCE -->
+<script src="js/mission-intelligence.js"></script>
+
+<!-- 08. HYBRID PHYSICS + AI/ML -->
+<script src="js/hybrid-evidence-dashboard.js"></script>
+<script src="js/hybrid-intelligence-ui.js"></script>
+
+<!-- 09. HISTORICAL REPLAY / REPORTING -->
+<script src="js/mission-replay.js"></script>
+<script src="js/historical-replay-dashboard.js"></script>
+<script src="js/mission-report-generator.js"></script>
+
+<!-- 10. CAN / FADEC INTERFACE -->
+<script src="js/can-fadec-interface.js"></script>
+
+<!-- 11. SIMULATION / PHYSICS CONTROLS -->
+<script src="js/simulation-controls.js"></script>
+<script src="js/physics-dashboard.js"></script>
+
+<!-- 12. MAIN DASHBOARD UI -->
+<script src="js/dashboard.js"></script>
+<script src="js/telemetry-detail-ui.js"></script>
+
+<!-- 13. MISSION CONTROL — MUST LOAD BEFORE UAV -->
+<script src="js/mission-control.js"></script>
+
+<!-- 14. UAV THREE.JS VISUALIZATION -->
+<script type="module" src="js/uav.js"></script>
+
+<!-- 15. ENGINE X4.10 THREE.JS SIMULATION -->
+<script type="module" src="js/simulation.js"></script>
+
+<!-- 16. ENGINE VISUAL SYNCHRONIZATION -->
+<script src="js/engine-visual-controller.js"></script>
+
+<!-- 17. COMPONENT INSPECTOR -->
+<script type="module" src="js/component-inspector.js"></script>
+
+<!-- 18. READINESS -->
+<script src="js/readiness-api-client.js"></script>
+<script src="js/operator-readiness-dashboard.js"></script>
+
+<!-- 19. LONG-DURATION / ENGINE-LIFE STUDY -->
+<script src="js/long-duration-dashboard.js"></script>
+
+<script src="js/dashboard-theme.js"></script>
+
+<!-- 20. FINAL INTEGRATION CHECK — ALWAYS LAST -->
+<script type="module" src="js/integration-check.js"></script>
+
+</body>
+</html>
