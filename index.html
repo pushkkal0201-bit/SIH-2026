@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PRATIRUP — Predictive Propulsion Intelligence for aero-engine health monitoring." />
+  <title>PRATIRUP | Predictive Propulsion Intelligence</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+
+<body>
+  <div class="utility-bar" role="region" aria-label="Website utilities">
+    <div class="container utility-wrap">
+      <div class="utility-left">
+        <span class="tricolor-mark" aria-hidden="true"></span>
+        <strong>SIH 2026 Academic Prototype</strong>
+        <span class="utility-separator">|</span>
+        <span>Team QubitX · PRATIRUP</span>
+      </div>
+
+      <div class="utility-actions">
+        <a href="#main-content">Skip to main content</a>
+        <span class="utility-separator">|</span>
+        <button type="button" data-font-down aria-label="Decrease text size">A−</button>
+        <button type="button" data-font-reset aria-label="Reset text size">A</button>
+        <button type="button" data-font-up aria-label="Increase text size">A+</button>
+        <button type="button" data-contrast aria-label="Toggle high contrast">◐</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="PRATIRUP home">
+        <div class="brand-mark">P</div>
+        <div class="brand-copy">
+          <strong>PRATIRUP</strong>
+          <span>Predictive Propulsion Intelligence</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="#product">Product</a>
+        <a href="#digital-twin">Digital Twin</a>
+        <a href="#technology">Technology</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="text-link nav-docs" href="#technology">Documentation</a>
+        <a class="button button-light" href="dashboard.html">Launch Platform <span>→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="notice-strip" role="status">
+    <div class="container notice-wrap">
+      <span class="notice-badge">PROJECT FOCUS</span>
+      <p>Digital Twin framework for predictive health monitoring of aero piston engines used in long-endurance UAV operations.</p>
+      <a href="#architecture">View system flow <span>→</span></a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- OFFICIAL-STYLE DRONE HERO CAROUSEL -->
+    <section class="drone-hero" id="home" aria-label="PRATIRUP UAV showcase">
+      <div class="drone-slider" data-slider>
+
+        <article class="drone-slide is-active"
+          style="--fallback-image: url('assets/images/uav-mission-01.svg');">
+          <div class="slide-image">
+            <img src="https://drdo.gov.in/drdo/sites/default/files/2024-10/Panchhi.jpg" alt="DRDO Panchi unmanned aerial vehicle in flight" loading="eager" data-remote-hero>
+            <span class="visual-source">Panchi UAV · DRDO public product gallery</span>
+          </div>
+          <div class="slide-shade"></div>
+          <div class="slide-grid"></div>
+
+          <div class="container slide-content">
+            <div class="slide-copy">
+              <div class="gov-style-label">
+                <span class="label-rule"></span>
+                PREDICTIVE PROPULSION INTELLIGENCE
+              </div>
+
+              <h1>
+                Intelligence for the engine.
+                <span>Confidence for the mission.</span>
+              </h1>
+
+              <p>
+                A Digital Twin platform for aero piston engines that transforms
+                live telemetry into health awareness, anomaly intelligence and
+                predictive maintenance insight.
+              </p>
+
+              <div class="slide-actions">
+                <a class="button button-primary" href="#digital-twin">Explore PRATIRUP <span>→</span></a>
+                <a class="button button-ghost" href="#architecture">View Architecture</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-caption">
+            <span>01</span>
+            <div>
+              <strong>ENGINE HEALTH INTELLIGENCE</strong>
+              <small>Digital Twin · Real-Time Telemetry · Predictive Analytics</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="drone-slide"
+          style="--fallback-image: url('assets/images/uav-mission-02.svg');">
+          <div class="slide-image">
+            <img src="https://drdo.gov.in/drdo/sites/default/files/2024-11/Nishant2_0.jpg" alt="DRDO Nishant unmanned aerial vehicle in flight" loading="eager" data-remote-hero>
+            <span class="visual-source">Nishant UAV · DRDO public product gallery</span>
+          </div>
+          <div class="slide-shade"></div>
+          <div class="slide-grid"></div>
+
+          <div class="container slide-content">
+            <div class="slide-copy">
+              <div class="gov-style-label">
+                <span class="label-rule"></span>
+                MISSION-AWARE DIGITAL TWIN
+              </div>
+
+              <h2>
+                Understand degradation
+                <span>before it becomes a mission risk.</span>
+              </h2>
+
+              <p>
+                PRATIRUP compares observed engine telemetry with expected
+                physics-based behaviour to detect changes that fixed threshold
+                monitoring may not reveal early enough.
+              </p>
+
+              <div class="slide-actions">
+                <a class="button button-primary" href="#product">Why PRATIRUP <span>→</span></a>
+                <a class="button button-ghost" href="#technology">Capabilities</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-caption">
+            <span>02</span>
+            <div>
+              <strong>MISSION-AWARE MONITORING</strong>
+              <small>Degradation Tracking · Anomaly Detection · State Estimation</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="drone-slide"
+          style="--fallback-image: url('assets/images/uav-mission-03.svg');">
+          <div class="slide-image">
+            <img src="https://drdo.gov.in/drdo/sites/default/files/2024-11/Lakshya_1.jpg" alt="DRDO Lakshya pilotless aerial target" loading="eager" data-remote-hero>
+            <span class="visual-source">Lakshya · DRDO public product gallery</span>
+          </div>
+          <div class="slide-shade"></div>
+          <div class="slide-grid"></div>
+
+          <div class="container slide-content">
+            <div class="slide-copy">
+              <div class="gov-style-label">
+                <span class="label-rule"></span>
+                FROM TELEMETRY TO DECISION
+              </div>
+
+              <h2>
+                Predictive maintenance
+                <span>built for long-duration operations.</span>
+              </h2>
+
+              <p>
+                Stream engine data through MQTT and Kafka, synchronize the
+                Digital Twin, estimate Remaining Useful Life and present
+                engineer-ready health recommendations.
+              </p>
+
+              <div class="slide-actions">
+                <a class="button button-primary" href="dashboard.html">Launch Platform <span>→</span></a>
+                <a class="button button-ghost" href="#use-cases">Mission Use Cases</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-caption">
+            <span>03</span>
+            <div>
+              <strong>PREDICTIVE MAINTENANCE</strong>
+              <small>RUL Prediction · Health Score · Maintenance Decision Support</small>
+            </div>
+          </div>
+        </article>
+
+        <button class="slider-arrow slider-prev" type="button" aria-label="Previous slide" data-prev>
+          <span>‹</span>
+        </button>
+
+        <button class="slider-arrow slider-next" type="button" aria-label="Next slide" data-next>
+          <span>›</span>
+        </button>
+
+        <div class="slider-controls">
+          <div class="container slider-controls-inner">
+            <div class="slider-dots" role="tablist" aria-label="Hero slides">
+              <button class="slider-dot is-active" type="button" aria-label="Show slide 1" data-slide="0">
+                <span>01</span><i></i>
+              </button>
+              <button class="slider-dot" type="button" aria-label="Show slide 2" data-slide="1">
+                <span>02</span><i></i>
+              </button>
+              <button class="slider-dot" type="button" aria-label="Show slide 3" data-slide="2">
+                <span>03</span><i></i>
+              </button>
+            </div>
+
+            <div class="slider-status">
+              <span class="status-pulse"></span>
+              <span>AUTO ROTATE · 06 SEC</span>
+              <button type="button" class="slider-pause" data-pause aria-label="Pause automatic slideshow">Pause</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT INTRO / HERO METRICS -->
+    <section class="post-hero-strip">
+      <div class="container post-hero-layout">
+        <div class="post-hero-statement">
+          <span>PRATIRUP</span>
+          <strong>Predictive Propulsion Intelligence</strong>
+        </div>
+
+        <div class="hero-metrics compact-metrics">
+          <div class="hero-metric">
+            <strong>180 HP</strong>
+            <span>Reference Engine</span>
+          </div>
+          <div class="hero-metric">
+            <strong>Real-Time</strong>
+            <span>Telemetry Intelligence</span>
+          </div>
+          <div class="hero-metric">
+            <strong>Physics + AI</strong>
+            <span>Hybrid Digital Twin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+    <!-- PROBLEM / OFFER -->
+    <section class="section section-light" id="product">
+      <div class="container">
+        <div class="section-intro split-intro">
+          <div>
+            <span class="section-kicker">WHY PRATIRUP</span>
+            <h2>Move from reactive monitoring to predictive intelligence.</h2>
+          </div>
+          <p>
+            Threshold-based monitoring tells engineers when a value has already crossed
+            a limit. PRATIRUP is designed to understand trends, compare expected and actual
+            behaviour, identify degradation and support maintenance decisions before a
+            serious fault develops.
+          </p>
+        </div>
+
+        <div class="compare-shell">
+          <div class="compare-column legacy-column">
+            <div class="compare-heading">
+              <span class="compare-tag">CONVENTIONAL</span>
+              <h3>Reactive Engine Monitoring</h3>
+            </div>
+            <ul class="compare-list">
+              <li><span>01</span>Fixed threshold alerts</li>
+              <li><span>02</span>Focus on current values</li>
+              <li><span>03</span>Limited degradation context</li>
+              <li><span>04</span>Manual interpretation</li>
+              <li><span>05</span>No direct RUL estimate</li>
+            </ul>
+          </div>
+
+          <div class="compare-divider"><span>→</span></div>
+
+          <div class="compare-column pratirup-column">
+            <div class="compare-heading">
+              <span class="compare-tag blue-tag">PRATIRUP</span>
+              <h3>Predictive Engine Intelligence</h3>
+            </div>
+            <ul class="compare-list">
+              <li><span>01</span>Early anomaly detection</li>
+              <li><span>02</span>Current + future state awareness</li>
+              <li><span>03</span>Degradation trend tracking</li>
+              <li><span>04</span>Physics + ML assisted reasoning</li>
+              <li><span>05</span>Remaining useful life estimation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIGITAL TWIN -->
+    <section class="section section-dark" id="digital-twin">
+      <div class="container">
+        <div class="section-intro dark-intro centered-intro">
+          <span class="section-kicker">DIGITAL TWIN CORE</span>
+          <h2>One engine. Three layers of intelligence.</h2>
+          <p>
+            PRATIRUP brings the physical engine, its synchronized virtual model and
+            predictive analytics into one engineering workflow.
+          </p>
+        </div>
+
+        <div class="three-layer-grid">
+          <article class="layer-card">
+            <div class="layer-number">01</div>
+            <div class="layer-icon">◌</div>
+            <span class="layer-label">PHYSICAL ENGINE</span>
+            <h3>Observe the real system.</h3>
+            <p>FADEC signals, sensor telemetry, operating conditions and mission context.</p>
+            <div class="layer-pills">
+              <span>RPM</span><span>Temperature</span><span>Pressure</span><span>Vibration</span>
+            </div>
+          </article>
+
+          <article class="layer-card highlighted-layer">
+            <div class="layer-number">02</div>
+            <div class="layer-icon">◇</div>
+            <span class="layer-label">DIGITAL TWIN</span>
+            <h3>Model expected behaviour.</h3>
+            <p>Continuously synchronize a virtual representation with live or replayed engine data.</p>
+            <div class="layer-pills">
+              <span>Physics</span><span>ML</span><span>State Estimation</span><span>Mission Context</span>
+            </div>
+          </article>
+
+          <article class="layer-card">
+            <div class="layer-number">03</div>
+            <div class="layer-icon">◎</div>
+            <span class="layer-label">INTELLIGENCE</span>
+            <h3>Predict what comes next.</h3>
+            <p>Turn behaviour into anomaly, degradation, health and maintenance insights.</p>
+            <div class="layer-pills">
+              <span>Anomaly</span><span>RUL</span><span>Health Score</span><span>Maintenance</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="twin-showcase">
+          <div class="showcase-copy">
+            <span class="section-kicker">ENGINE ANALYSIS WORKSPACE</span>
+            <h3>Know what is happening inside the engine — and why.</h3>
+            <p>
+              The Digital Twin workspace is designed to become the engineering focal point:
+              live values, model synchronization, degradation indicators and prediction
+              results in one view.
+            </p>
+
+            <div class="feature-lines">
+              <div><i></i><span>Continuously synchronized engine state</span></div>
+              <div><i></i><span>Expected vs observed behaviour</span></div>
+              <div><i></i><span>Mission-aware fault interpretation</span></div>
+              <div><i></i><span>Predictive maintenance recommendation</span></div>
+            </div>
+
+            <a href="dashboard.html" class="button button-primary">Open Engineering Platform <span>→</span></a>
+          </div>
+
+          <div class="workspace-card">
+            <div class="workspace-toolbar">
+              <div><span>PRATIRUP / DIGITAL TWIN</span><strong>Engine Analysis</strong></div>
+              <div class="toolbar-items"><span>LIVE</span><span>3D</span><span>EXPAND</span></div>
+            </div>
+            <div class="workspace-body">
+              <div class="workspace-grid"></div>
+              <div class="workspace-graph graph-one"></div>
+              <div class="workspace-graph graph-two"></div>
+
+              <div class="workspace-engine">
+                <div class="workspace-ring wr1"></div>
+                <div class="workspace-ring wr2"></div>
+                <div class="workspace-core">DT</div>
+              </div>
+
+              <div class="work-tag work-tag-a"><span>RPM</span><strong>2380</strong></div>
+              <div class="work-tag work-tag-b"><span>CHT</span><strong>186°C</strong></div>
+              <div class="work-tag work-tag-c"><span>HEALTH</span><strong class="success-text">94.6%</strong></div>
+            </div>
+            <div class="workspace-footer">
+              <div><span>Synchronization</span><strong>99.4%</strong></div>
+              <div><span>Confidence</span><strong>91%</strong></div>
+              <div><span>Prediction</span><strong>328 hrs</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="section section-light" id="technology">
+      <div class="container">
+        <div class="section-intro centered-intro">
+          <span class="section-kicker">PLATFORM CAPABILITIES</span>
+          <h2>Built for continuous engine-health awareness.</h2>
+          <p>
+            Every layer of PRATIRUP is focused on making telemetry more useful to the engineer.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card">
+            <div class="capability-icon">01</div>
+            <h3>Real-Time Telemetry</h3>
+            <p>Process engine parameters continuously from simulated sources today and real hardware interfaces later.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-icon">02</div>
+            <h3>Anomaly Detection</h3>
+            <p>Identify unusual behaviour before fixed safety thresholds are necessarily crossed.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-icon">03</div>
+            <h3>Degradation Tracking</h3>
+            <p>Monitor slow changes in thermal, vibration and performance behaviour across operating history.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-icon">04</div>
+            <h3>RUL Prediction</h3>
+            <p>Estimate remaining useful life and support maintenance planning using health trends.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-icon">05</div>
+            <h3>Mission Replay</h3>
+            <p>Replay recorded missions and inspect engine behaviour through changing mission phases.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-icon">06</div>
+            <h3>Predictive Maintenance</h3>
+            <p>Translate engine-health intelligence into a practical inspection or maintenance recommendation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="section architecture-section" id="architecture">
+      <div class="container architecture-layout">
+        <div class="architecture-copy">
+          <span class="section-kicker">SYSTEM ARCHITECTURE</span>
+          <h2>Designed for real-time engineering data.</h2>
+          <p>
+            PRATIRUP uses a modular data flow so the same application can support a simulated
+            telemetry source during development and real FADEC or sensor integration later.
+          </p>
+
+          <div class="architecture-notes">
+            <div><strong>01</strong><span>Decoupled telemetry ingestion</span></div>
+            <div><strong>02</strong><span>Streaming-first processing</span></div>
+            <div><strong>03</strong><span>Hybrid physics + ML analysis</span></div>
+            <div><strong>04</strong><span>Engineer-facing visualization</span></div>
+          </div>
+        </div>
+
+        <div class="architecture-board">
+          <div class="arch-row">
+            <div class="arch-box"><span>PHYSICAL SOURCE</span><strong>FADEC / Sensors</strong></div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-box accent-box"><span>INGESTION</span><strong>MQTT</strong></div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-box accent-box"><span>STREAM</span><strong>Apache Kafka</strong></div>
+          </div>
+
+          <div class="arch-down">↓</div>
+
+          <div class="arch-middle-grid">
+            <div class="arch-box full-box"><span>PROCESSING CORE</span><strong>Digital Twin State Engine</strong></div>
+          </div>
+
+          <div class="arch-down">↓</div>
+
+          <div class="arch-row tri-row">
+            <div class="arch-box"><span>MODEL</span><strong>Physics</strong></div>
+            <div class="arch-arrow">+</div>
+            <div class="arch-box"><span>MODEL</span><strong>Machine Learning</strong></div>
+            <div class="arch-arrow">+</div>
+            <div class="arch-box"><span>CONTEXT</span><strong>Mission State</strong></div>
+          </div>
+
+          <div class="arch-down">↓</div>
+
+          <div class="arch-row tri-row">
+            <div class="arch-box output-box"><span>OUTPUT</span><strong>Anomaly</strong></div>
+            <div class="arch-box output-box"><span>OUTPUT</span><strong>RUL</strong></div>
+            <div class="arch-box output-box"><span>OUTPUT</span><strong>Health</strong></div>
+          </div>
+
+          <div class="arch-down">↓</div>
+
+          <div class="arch-middle-grid">
+            <div class="arch-box full-box final-box"><span>APPLICATION</span><strong>Engineer Dashboard & Mission Replay</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="section use-cases-section" id="use-cases">
+      <div class="container">
+        <div class="section-intro split-intro">
+          <div>
+            <span class="section-kicker">MISSION USE CASES</span>
+            <h2>Built around operational reliability.</h2>
+          </div>
+          <p>
+            The platform can support long-duration missions where engine reliability,
+            trend visibility and maintenance planning directly affect mission readiness.
+          </p>
+        </div>
+
+        <div class="use-case-grid">
+          <article>
+            <span>01</span>
+            <h3>Long-Endurance ISR</h3>
+            <p>Monitor engine-health trends throughout extended operating periods.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Maritime Surveillance</h3>
+            <p>Track propulsion condition in missions with prolonged steady-state operation.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Communication Relay</h3>
+            <p>Support engine reliability where continuous availability is mission-critical.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Maintenance Planning</h3>
+            <p>Use degradation and RUL insights to schedule inspection before an avoidable failure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta" id="about">
+      <div class="final-cta-grid"></div>
+      <div class="container final-cta-content">
+        <span class="section-kicker">PRATIRUP</span>
+        <h2>From engine data to mission confidence.</h2>
+        <p>
+          A predictive Digital Twin framework for aero-engine health monitoring,
+          degradation intelligence and maintenance decision support.
+        </p>
+        <div class="final-actions">
+          <a href="dashboard.html" class="button button-light">Launch Platform <span>→</span></a>
+          <a href="#architecture" class="button button-ghost">Review Architecture</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <div class="brand-mark">P</div>
+          <div class="brand-copy">
+            <strong>PRATIRUP</strong>
+            <span>Predictive Propulsion Intelligence</span>
+          </div>
+        </a>
+        <p>
+          Digital Twin based predictive engine-health monitoring for aero piston engines.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <strong>Platform</strong>
+        <a href="#digital-twin">Digital Twin</a>
+        <a href="#technology">Capabilities</a>
+        <a href="#architecture">Architecture</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+
+      <div class="footer-column">
+        <strong>Technology</strong>
+        <a href="#technology">Physics Models</a>
+        <a href="#technology">Machine Learning</a>
+        <a href="#architecture">MQTT</a>
+        <a href="#architecture">Apache Kafka</a>
+      </div>
+
+      <div class="footer-column">
+        <strong>Project</strong>
+        <a href="#about">About</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#architecture">System Design</a>
+        <a href="#">Team QubitX</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 PRATIRUP · Team QubitX</span>
+      <span>Smart India Hackathon 2026 · Problem Statement 26054</span>
+    </div>
+  </footer>
+  <script src="js/slider.js"></script>
+</body>
+</html>
