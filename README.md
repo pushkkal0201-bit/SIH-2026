@@ -1,2 +1,2 @@
-# SIH-2026
+# PRATIRUP
 Project Development
