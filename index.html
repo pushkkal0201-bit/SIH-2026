@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PRATIRUP — Predictive Propulsion Intelligence for aero-engine health monitoring." />
+  <meta name="description" content="PRATIRUP — Predictive Real-time Analytics &amp; Twin for Intelligent Reliability &amp; UAV Propulsion." />
+  <meta name="theme-color" content="#03050a" />
+  <link rel="preload" as="image" href="assets/images/uav-maritime.jpeg" />
   <title>PRATIRUP | Predictive Propulsion Intelligence</title>
  <!-- EXISTING DASHBOARD CSS -->
  
-    <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/future.css" />
 </head>
 
-<body>
+<body class="future-interface">
   <div class="utility-bar" role="region" aria-label="Website utilities">
     <div class="container utility-wrap">
       <div class="utility-left">
         <span class="tricolor-mark" aria-hidden="true"></span>
         <strong>SIH 2026 Academic Prototype</strong>
         <span class="utility-separator">|</span>
-        <span>Team QubitX · PRATIRUP</span>
+        <span>Team QubitX · Project PRATIRUP</span>
       </div>
 
       <div class="utility-actions">
@@ -35,10 +38,10 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="PRATIRUP home">
-        <div class="brand-mark">P</div>
+        <div class="brand-mark"><img src="pratirup-logo.png" alt="PRATIRUP logo" /></div>
         <div class="brand-copy">
           <strong>PRATIRUP</strong>
-          <span>Predictive Propulsion Intelligence</span>
+          <span>Predictive Real-time Analytics &amp; Twin for Intelligent Reliability &amp; UAV Propulsion</span>
         </div>
       </a>
 
@@ -54,6 +57,7 @@
       <div class="nav-actions">
         <a class="text-link nav-docs" href="#technology">Documentation</a>
         <a class="button button-light" href="om.html">Launch Platform <span>→</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
       </div>
     </div>
   </header>
@@ -71,12 +75,12 @@
     <!-- OFFICIAL-STYLE DRONE HERO CAROUSEL -->
     <section class="drone-hero" id="home" aria-label="PRATIRUP UAV showcase">
       <div class="drone-slider" data-slider>
+        <div class="hero-ambient-title" aria-hidden="true">PRATIRUP</div>
 
-        <article class="drone-slide is-active"
-          style="--fallback-image: url('assets/images/uav-mission-01.svg');">
+        <article class="drone-slide is-active">
           <div class="slide-image">
-            <img src="https://drdo.gov.in/drdo/sites/default/files/2024-10/Panchhi.jpg" alt="DRDO Panchi unmanned aerial vehicle in flight" loading="eager" data-remote-hero>
-            <span class="visual-source">Panchi UAV · DRDO public product gallery</span>
+            <img src="assets/images/uav-maritime.jpeg" alt="Indian Navy long-endurance UAV flying over the sea" loading="eager" fetchpriority="high">
+            <span class="visual-source">Indian maritime UAV · visual reference</span>
           </div>
           <div class="slide-shade"></div>
           <div class="slide-grid"></div>
@@ -85,7 +89,7 @@
             <div class="slide-copy">
               <div class="gov-style-label">
                 <span class="label-rule"></span>
-                PREDICTIVE PROPULSION INTELLIGENCE
+                PREDICTIVE REAL-TIME ANALYTICS &amp; TWIN
               </div>
 
               <h1>
@@ -115,11 +119,10 @@
           </div>
         </article>
 
-        <article class="drone-slide"
-          style="--fallback-image: url('assets/images/uav-mission-02.svg');">
+        <article class="drone-slide">
           <div class="slide-image">
-            <img src="https://drdo.gov.in/drdo/sites/default/files/2024-11/Nishant2_0.jpg" alt="DRDO Nishant unmanned aerial vehicle in flight" loading="eager" data-remote-hero>
-            <span class="visual-source">Nishant UAV · DRDO public product gallery</span>
+            <img src="assets/images/uav-high-altitude.jpeg" alt="High-altitude long-endurance UAV above the clouds" loading="lazy">
+            <span class="visual-source">High-altitude endurance UAV · visual reference</span>
           </div>
           <div class="slide-shade"></div>
           <div class="slide-grid"></div>
@@ -158,11 +161,10 @@
           </div>
         </article>
 
-        <article class="drone-slide"
-          style="--fallback-image: url('assets/images/uav-mission-03.svg');">
+        <article class="drone-slide">
           <div class="slide-image">
-            <img src="https://drdo.gov.in/drdo/sites/default/files/2024-11/Lakshya_1.jpg" alt="DRDO Lakshya pilotless aerial target" loading="eager" data-remote-hero>
-            <span class="visual-source">Lakshya · DRDO public product gallery</span>
+            <img src="assets/images/uav-flightline.jpeg" alt="Long-endurance UAVs prepared on a flight line" loading="lazy">
+            <span class="visual-source">Long-endurance UAV flight line · visual reference</span>
           </div>
           <div class="slide-shade"></div>
           <div class="slide-grid"></div>
@@ -230,6 +232,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -238,7 +241,7 @@
       <div class="container post-hero-layout">
         <div class="post-hero-statement">
           <span>PRATIRUP</span>
-          <strong>Predictive Propulsion Intelligence</strong>
+          <strong>Predictive Real-time Analytics &amp; Twin for Intelligent Reliability &amp; UAV Propulsion</strong>
         </div>
 
         <div class="hero-metrics compact-metrics">
@@ -529,6 +532,22 @@
           </p>
         </div>
 
+        <div class="mission-gallery" aria-label="UAV mission reference gallery">
+          <figure class="mission-photo mission-photo-wide">
+            <img src="assets/images/uav-test-flight.jpeg" alt="Indian unmanned aircraft during a test flight" loading="lazy" />
+            <div class="mission-signal"><i></i><span>Engine signal</span><strong>Nominal · 94.6%</strong></div>
+            <figcaption><span>FLIGHT VALIDATION</span><strong>Test, observe and improve reliability</strong></figcaption>
+          </figure>
+          <figure class="mission-photo">
+            <img src="assets/images/uav-frontal.jpeg" alt="Front view of a long-endurance UAV" loading="lazy" />
+            <figcaption><span>PERSISTENT ISR</span><strong>Reliability across long sorties</strong></figcaption>
+          </figure>
+          <figure class="mission-photo">
+            <img src="assets/images/uav-maritime.jpeg" alt="Long-endurance UAV supporting maritime surveillance" loading="lazy" />
+            <figcaption><span>MARITIME AWARENESS</span><strong>Propulsion insight over open water</strong></figcaption>
+          </figure>
+        </div>
+
         <div class="use-case-grid">
           <article>
             <span>01</span>
@@ -576,10 +595,10 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a class="brand" href="#home">
-          <div class="brand-mark">P</div>
+          <div class="brand-mark"><img src="pratirup-logo.png" alt="PRATIRUP logo" /></div>
           <div class="brand-copy">
             <strong>PRATIRUP</strong>
-            <span>Predictive Propulsion Intelligence</span>
+            <span>Predictive Real-time Analytics &amp; Twin for Intelligent Reliability &amp; UAV Propulsion</span>
           </div>
         </a>
         <p>
@@ -608,7 +627,7 @@
         <a href="#about">About</a>
         <a href="#use-cases">Use Cases</a>
         <a href="#architecture">System Design</a>
-        <a href="#">Team QubitX</a>
+        <a href="#home">Team QubitX</a>
       </div>
     </div>
 
@@ -617,6 +636,7 @@
       <span>Smart India Hackathon 2026 · Problem Statement 26054</span>
     </div>
   </footer>
+  <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>↑</button>
   <script src="js/slider.js"></script>
 </body>
 </html>
