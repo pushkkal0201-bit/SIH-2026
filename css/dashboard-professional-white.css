@@ -1,0 +1,983 @@
+:root {
+  --pd-page: #f4f8fc;
+  --pd-surface: #ffffff;
+  --pd-surface-soft: #f8fbfe;
+  --pd-surface-blue: #eef6ff;
+  --pd-surface-cyan: #f0fbff;
+  --pd-line: #dce6ef;
+  --pd-line-strong: #cad8e5;
+
+  --pd-navy: #0b1f33;
+  --pd-text: #213449;
+  --pd-text-soft: #607386;
+  --pd-muted: #8494a5;
+
+  --pd-blue: #2563eb;
+  --pd-blue-deep: #1d4ed8;
+  --pd-cyan: #38bdf8;
+  --pd-cyan-deep: #0891b2;
+  --pd-green: #16a34a;
+  --pd-amber: #d97706;
+  --pd-red: #dc2626;
+
+  --pd-radius-sm: 9px;
+  --pd-radius: 14px;
+  --pd-radius-lg: 20px;
+  --pd-shadow-sm: 0 8px 26px rgba(15, 23, 42, 0.05);
+  --pd-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+  --pd-sidebar: 268px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body.redux-dashboard-theme {
+  margin: 0;
+  background: var(--pd-page) !important;
+  color: var(--pd-text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body.redux-dashboard-theme button,
+body.redux-dashboard-theme input,
+body.redux-dashboard-theme select { font: inherit; }
+body.redux-dashboard-theme button { cursor: pointer; }
+
+.redux-dashboard-theme .app-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  background: var(--pd-page) !important;
+}
+
+.redux-dashboard-theme .sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 90;
+  width: var(--pd-sidebar);
+  padding: 22px 16px 18px;
+  overflow-y: auto;
+  background: #ffffff !important;
+  border-right: 1px solid var(--pd-line) !important;
+  box-shadow: 8px 0 28px rgba(15, 23, 42, 0.035);
+}
+.redux-dashboard-theme .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 7px 20px;
+  border-bottom: 1px solid var(--pd-line);
+}
+.redux-dashboard-theme .brand-logo {
+  width: 47px;
+  height: 47px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f2f9ff, #e7f3ff) !important;
+  border: 1px solid #d4e6f6;
+}
+.redux-dashboard-theme .brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.redux-dashboard-theme .brand-copy h1 {
+  margin: 0;
+  color: var(--pd-navy) !important;
+  font-size: 17px;
+  line-height: 1.05;
+  letter-spacing: 1.4px;
+}
+.redux-dashboard-theme .brand-copy span {
+  display: block;
+  margin-top: 5px;
+  color: var(--pd-muted) !important;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+.redux-dashboard-theme .platform-card {
+  margin: 16px 3px 18px;
+  padding: 12px 13px;
+  background: linear-gradient(145deg, #f8fbff, #f1f7fd) !important;
+  border: 1px solid var(--pd-line) !important;
+  border-radius: 12px;
+}
+.redux-dashboard-theme .platform-row {
+  min-height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid #e8eef4;
+}
+.redux-dashboard-theme .platform-row:last-child { border-bottom: 0; }
+.redux-dashboard-theme .platform-row span {
+  color: var(--pd-muted) !important;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+.redux-dashboard-theme .platform-row strong {
+  color: var(--pd-navy) !important;
+  font-size: 8px;
+  font-weight: 800;
+}
+.redux-dashboard-theme .main-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.redux-dashboard-theme .nav-item {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid transparent !important;
+  border-radius: 9px;
+  background: transparent !important;
+  color: #617487 !important;
+  text-align: left;
+  transition: 0.18s ease;
+}
+.redux-dashboard-theme .nav-item:hover {
+  background: #f5f9fd !important;
+  color: var(--pd-navy) !important;
+}
+.redux-dashboard-theme .nav-item.active,
+.redux-dashboard-theme .nav-item[aria-current="page"] {
+  color: var(--pd-blue) !important;
+  background: linear-gradient(90deg, #eef6ff, #f8fbff) !important;
+  border-color: #d4e5f6 !important;
+}
+.redux-dashboard-theme .nav-icon {
+  width: 22px;
+  flex: 0 0 auto;
+  color: inherit !important;
+  text-align: center;
+  font-size: 14px;
+}
+.redux-dashboard-theme .nav-item-label {
+  font-size: 10px;
+  font-weight: 750;
+}
+.redux-dashboard-theme .sidebar-note {
+  margin: 18px 3px 0;
+  padding: 13px;
+  border: 1px solid #d7eadf !important;
+  border-radius: 11px;
+  background: #f6fcf8 !important;
+}
+.redux-dashboard-theme .status-line,
+.redux-dashboard-theme .live-indicator,
+.redux-dashboard-theme .canvas-status,
+.redux-dashboard-theme .uav-mission-status {
+  color: var(--pd-green) !important;
+}
+.redux-dashboard-theme .status-dot,
+.redux-dashboard-theme .footer-status-dot,
+.redux-dashboard-theme .hybrid-status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pd-green) !important;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.09);
+}
+.redux-dashboard-theme .sidebar-note p {
+  margin: 8px 0 0;
+  color: var(--pd-text-soft) !important;
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+/* ---------- WORKSPACE ---------- */
+.redux-dashboard-theme .workspace {
+  width: calc(100% - var(--pd-sidebar));
+  min-width: 0;
+  margin-left: var(--pd-sidebar);
+  padding: 24px 26px 44px;
+  background: var(--pd-page) !important;
+}
+.redux-dashboard-theme .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 55;
+  min-height: 88px;
+  margin: -24px -26px 20px;
+  padding: 18px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-bottom: 1px solid var(--pd-line) !important;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.035);
+}
+.redux-dashboard-theme .sidebar-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border: 1px solid var(--pd-line);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--pd-navy);
+}
+.redux-dashboard-theme .title-block { flex: 1; min-width: 0; }
+.redux-dashboard-theme .eyebrow,
+.redux-dashboard-theme .mission-kicker,
+.redux-dashboard-theme .historical-replay-kicker,
+.redux-dashboard-theme .operator-readiness-kicker,
+.redux-dashboard-theme .long-duration-kicker {
+  color: var(--pd-blue) !important;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+.redux-dashboard-theme .title-block h2 {
+  margin: 5px 0 0;
+  color: var(--pd-navy) !important;
+  font-size: 25px;
+  line-height: 1.2;
+}
+.redux-dashboard-theme .title-block p {
+  margin: 6px 0 0;
+  color: var(--pd-text-soft) !important;
+  font-size: 10px;
+}
+.redux-dashboard-theme .top-status {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+.redux-dashboard-theme .status-card {
+  min-width: 112px;
+  padding: 10px 12px;
+  border: 1px solid var(--pd-line) !important;
+  border-radius: 10px;
+  background: #fff !important;
+  box-shadow: var(--pd-shadow-sm);
+}
+.redux-dashboard-theme .status-card > span {
+  display: block;
+  color: var(--pd-muted) !important;
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+.redux-dashboard-theme .status-card > strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+  color: var(--pd-navy) !important;
+  font-size: 9px;
+}
+
+/* ---------- PRIMARY TELEMETRY ---------- */
+.redux-dashboard-theme .telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.redux-dashboard-theme .telemetry-card {
+  min-height: 105px;
+  padding: 15px;
+  border: 1px solid var(--pd-line) !important;
+  border-radius: 12px;
+  background: #fff !important;
+  box-shadow: var(--pd-shadow-sm);
+}
+.redux-dashboard-theme .telemetry-card:hover {
+  border-color: #c9ddeb !important;
+  transform: translateY(-1px);
+}
+.redux-dashboard-theme .telemetry-label,
+.redux-dashboard-theme .section-title {
+  color: var(--pd-muted) !important;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+.redux-dashboard-theme .telemetry-reading {
+  margin-top: 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+.redux-dashboard-theme .telemetry-reading strong {
+  color: var(--pd-navy) !important;
+  font-size: 23px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.redux-dashboard-theme .telemetry-reading small {
+  color: var(--pd-muted) !important;
+  font-size: 7px;
+}
+
+.redux-dashboard-theme .panel,
+.redux-dashboard-theme .mission-control-panel,
+.redux-dashboard-theme .historical-replay-panel,
+.redux-dashboard-theme .operator-readiness-panel,
+.redux-dashboard-theme .long-duration-panel,
+.redux-dashboard-theme .info-panel {
+  color: var(--pd-text) !important;
+  background: #ffffff !important;
+  border: 1px solid var(--pd-line) !important;
+  border-radius: var(--pd-radius) !important;
+  box-shadow: var(--pd-shadow-sm);
+}
+.redux-dashboard-theme .digital-twin-grid {
+  display: grid;
+  grid-template-columns: minmax(235px, .78fr) minmax(500px, 1.7fr) minmax(250px, .82fr);
+  gap: 12px;
+  align-items: start;
+}
+.redux-dashboard-theme .panel-header {
+  min-height: 62px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 1px solid var(--pd-line) !important;
+  background: linear-gradient(180deg, #ffffff, #fbfdff) !important;
+}
+.redux-dashboard-theme .panel-header small,
+.redux-dashboard-theme .uav-mission-panel-head small,
+.redux-dashboard-theme .hybrid-panel-header small {
+  display: block;
+  color: var(--pd-blue) !important;
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 0.9px;
+}
+.redux-dashboard-theme .panel-header h3,
+.redux-dashboard-theme .uav-mission-panel-head h3,
+.redux-dashboard-theme .mission-control-head h3,
+.redux-dashboard-theme .historical-replay-title-row h3,
+.redux-dashboard-theme .operator-readiness-header h3,
+.redux-dashboard-theme .hybrid-panel-header h3,
+.redux-dashboard-theme .long-duration-header h3 {
+  margin: 4px 0 0;
+  color: var(--pd-navy) !important;
+  font-size: 13px;
+  line-height: 1.25;
+}
+.redux-dashboard-theme .live-indicator,
+.redux-dashboard-theme .canvas-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 7px;
+  border-radius: 999px;
+  border: 1px solid #d6eadc !important;
+  background: #f6fcf8 !important;
+  font-size: 6px;
+  font-weight: 900;
+}
+
+.redux-dashboard-theme .telemetry-section {
+  padding: 14px 15px;
+  border-bottom: 1px solid #edf2f6;
+}
+.redux-dashboard-theme .telemetry-section:last-child { border-bottom: 0; }
+.redux-dashboard-theme .cylinder-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+.redux-dashboard-theme .mini-reading {
+  padding: 10px;
+  border: 1px solid #e1e9f1 !important;
+  border-radius: 9px;
+  background: var(--pd-surface-soft) !important;
+}
+.redux-dashboard-theme .mini-reading span {
+  display: block;
+  color: var(--pd-muted) !important;
+  font-size: 6px;
+  font-weight: 800;
+}
+.redux-dashboard-theme .mini-reading strong {
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--pd-navy) !important;
+  font-size: 14px;
+}
+.redux-dashboard-theme .mini-reading small { color: var(--pd-muted) !important; font-size: 6px; }
+.redux-dashboard-theme .telemetry-row {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #edf2f6;
+}
+.redux-dashboard-theme .telemetry-row:last-child { border-bottom: 0; }
+.redux-dashboard-theme .telemetry-row > span { color: var(--pd-text-soft) !important; font-size: 8px; }
+.redux-dashboard-theme .telemetry-row strong { color: var(--pd-navy) !important; font-size: 8px; }
+
+.redux-dashboard-theme .engine-panel { overflow: hidden; }
+.redux-dashboard-theme .simulation-stage,
+.redux-dashboard-theme .uav-mission-stage {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, rgba(56, 189, 248, 0.10), transparent 44%),
+    linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+    #ffffff !important;
+  background-size: auto, 34px 34px, 34px 34px, auto !important;
+  border-bottom: 1px solid var(--pd-line) !important;
+}
+.redux-dashboard-theme .simulation-stage { min-height: 430px; }
+.redux-dashboard-theme .engine-canvas-host,
+.redux-dashboard-theme .uav-mission-canvas-host {
+  width: 100%;
+  min-height: 430px;
+  background: transparent !important;
+}
+.redux-dashboard-theme .canvas-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: transparent !important;
+  color: var(--pd-text) !important;
+}
+.redux-dashboard-theme .canvas-reticle {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border: 1px dashed rgba(37, 99, 235, 0.24) !important;
+  border-radius: 50%;
+}
+.redux-dashboard-theme .placeholder-copy { position: relative; z-index: 2; text-align: center; }
+.redux-dashboard-theme .placeholder-copy span {
+  display: block;
+  color: var(--pd-blue) !important;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.redux-dashboard-theme .placeholder-copy strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--pd-navy) !important;
+  font-size: 15px;
+}
+.redux-dashboard-theme .placeholder-copy p { color: var(--pd-text-soft) !important; font-size: 9px; }
+.redux-dashboard-theme .canvas-chip,
+.redux-dashboard-theme .uav-stage-chip {
+  position: absolute;
+  z-index: 8;
+  min-width: 88px;
+  padding: 8px 10px;
+  border: 1px solid #d9e5ef !important;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: var(--pd-shadow-sm);
+  backdrop-filter: blur(8px);
+}
+.redux-dashboard-theme .canvas-chip-left,
+.redux-dashboard-theme .uav-stage-chip-left { left: 15px; top: 15px; }
+.redux-dashboard-theme .canvas-chip-right,
+.redux-dashboard-theme .uav-stage-chip-right { right: 15px; top: 15px; }
+.redux-dashboard-theme .canvas-chip span,
+.redux-dashboard-theme .uav-stage-chip span { display: block; color: var(--pd-muted) !important; font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme .canvas-chip strong,
+.redux-dashboard-theme .uav-stage-chip strong { display: block; margin-top: 4px; color: var(--pd-navy) !important; font-size: 8px; }
+
+.redux-dashboard-theme .simulation-controls,
+.redux-dashboard-theme .component-inspector {
+  padding: 14px 15px;
+  background: #ffffff !important;
+  border-top: 1px solid var(--pd-line) !important;
+}
+.redux-dashboard-theme .simulation-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.redux-dashboard-theme .control-group,
+.redux-dashboard-theme .inspector-actions,
+.redux-dashboard-theme .simulation-control-actions,
+.redux-dashboard-theme .mission-control-row,
+.redux-dashboard-theme .historical-replay-control-group,
+.redux-dashboard-theme .historical-replay-speed-group {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.redux-dashboard-theme .control-button,
+.redux-dashboard-theme .mission-action,
+.redux-dashboard-theme .mission-speed,
+.redux-dashboard-theme .historical-replay-action,
+.redux-dashboard-theme .historical-replay-speed {
+  min-height: 35px;
+  padding: 0 10px;
+  border: 1px solid var(--pd-line-strong) !important;
+  border-radius: 7px;
+  background: #ffffff !important;
+  color: #53677b !important;
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.35px;
+  transition: .18s ease;
+}
+.redux-dashboard-theme .control-button:hover,
+.redux-dashboard-theme .mission-action:hover,
+.redux-dashboard-theme .mission-speed:hover,
+.redux-dashboard-theme .historical-replay-action:hover,
+.redux-dashboard-theme .historical-replay-speed:hover {
+  color: var(--pd-blue) !important;
+  border-color: #bcd4ea !important;
+  background: #f5faff !important;
+}
+.redux-dashboard-theme .control-button.primary,
+.redux-dashboard-theme .mission-action.primary,
+.redux-dashboard-theme .historical-replay-action-primary {
+  border-color: var(--pd-blue) !important;
+  background: var(--pd-blue) !important;
+  color: #ffffff !important;
+}
+.redux-dashboard-theme .control-button.accent {
+  border-color: #a9def1 !important;
+  background: #eefbff !important;
+  color: var(--pd-cyan-deep) !important;
+}
+.redux-dashboard-theme .mission-action.danger,
+.redux-dashboard-theme .historical-replay-action-danger {
+  border-color: #fecaca !important;
+  background: #fff7f7 !important;
+  color: var(--pd-red) !important;
+}
+.redux-dashboard-theme .rpm-control { min-width: 190px; }
+.redux-dashboard-theme .rpm-heading,
+.redux-dashboard-theme .simulation-control-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.redux-dashboard-theme .rpm-heading span,
+.redux-dashboard-theme .simulation-control-label span {
+  color: var(--pd-muted) !important;
+  font-size: 7px;
+  font-weight: 900;
+}
+.redux-dashboard-theme .rpm-heading strong,
+.redux-dashboard-theme .simulation-control-label strong { color: var(--pd-blue) !important; font-size: 9px; }
+.redux-dashboard-theme input[type="range"] {
+  width: 100%;
+  accent-color: var(--pd-blue);
+}
+.redux-dashboard-theme select,
+.redux-dashboard-theme input[type="text"],
+.redux-dashboard-theme input[type="number"] {
+  min-height: 38px;
+  width: 100%;
+  padding: 0 10px;
+  border: 1px solid var(--pd-line-strong) !important;
+  border-radius: 7px;
+  background: #ffffff !important;
+  color: var(--pd-navy) !important;
+  outline: none;
+}
+.redux-dashboard-theme select:focus,
+.redux-dashboard-theme input:focus { border-color: #8dbaf1 !important; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08); }
+.redux-dashboard-theme .component-inspector { border-top: 1px solid var(--pd-line) !important; }
+.redux-dashboard-theme .inspector-header strong { color: var(--pd-navy) !important; font-size: 9px; }
+.redux-dashboard-theme .inspector-header small { color: var(--pd-blue) !important; font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme .component-inspector p { color: var(--pd-text-soft) !important; font-size: 8px; }
+
+
+.redux-dashboard-theme .simulation-input-panel { overflow: hidden; }
+.redux-dashboard-theme .simulation-control { padding: 14px 15px; border-bottom: 1px solid #edf2f6; }
+.redux-dashboard-theme .simulation-control input[type="range"] { margin-top: 10px; }
+.redux-dashboard-theme .environment-summary { margin: 10px 15px 0; padding: 12px; border: 1px solid var(--pd-line) !important; border-radius: 10px; background: var(--pd-surface-soft) !important; }
+.redux-dashboard-theme .simulation-control-actions { padding: 14px 15px 16px; }
+
+
+.redux-dashboard-theme .uav-mission-panel,
+.redux-dashboard-theme .mission-control-panel,
+.redux-dashboard-theme .historical-replay-panel,
+.redux-dashboard-theme .operator-readiness-panel,
+.redux-dashboard-theme .hybrid-intelligence-panel,
+.redux-dashboard-theme .twin-status-grid,
+.redux-dashboard-theme .long-duration-panel {
+  margin-top: 14px;
+}
+.redux-dashboard-theme .uav-mission-panel { overflow: hidden; }
+.redux-dashboard-theme .uav-mission-panel-head,
+.redux-dashboard-theme .mission-control-head,
+.redux-dashboard-theme .historical-replay-header,
+.redux-dashboard-theme .operator-readiness-header,
+.redux-dashboard-theme .hybrid-panel-header,
+.redux-dashboard-theme .long-duration-header {
+  padding: 17px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--pd-line) !important;
+  background: linear-gradient(180deg, #ffffff, #fbfdff) !important;
+}
+.redux-dashboard-theme .uav-mission-panel-head p,
+.redux-dashboard-theme .historical-replay-heading p,
+.redux-dashboard-theme .operator-readiness-subtitle,
+.redux-dashboard-theme .hybrid-subtitle,
+.redux-dashboard-theme .long-duration-subtitle {
+  margin: 6px 0 0;
+  color: var(--pd-text-soft) !important;
+  font-size: 9px;
+  line-height: 1.6;
+}
+.redux-dashboard-theme .uav-mission-stage { min-height: 440px; }
+.redux-dashboard-theme .uav-mission-canvas-host { min-height: 440px; }
+
+
+.redux-dashboard-theme .mission-control-panel { padding-bottom: 16px; }
+.redux-dashboard-theme .mission-control-row { padding: 12px 16px 0; }
+.redux-dashboard-theme .mission-meta {
+  margin: 14px 16px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.redux-dashboard-theme .mission-meta > div,
+.redux-dashboard-theme .historical-replay-meta-card,
+.redux-dashboard-theme .historical-replay-telemetry-card,
+.redux-dashboard-theme .operator-readiness-card,
+.redux-dashboard-theme .operator-risk-card,
+.redux-dashboard-theme .hybrid-summary-card,
+.redux-dashboard-theme .hybrid-intelligence-card,
+.redux-dashboard-theme .long-duration-card,
+.redux-dashboard-theme .long-duration-wear-card {
+  padding: 13px;
+  border: 1px solid var(--pd-line) !important;
+  border-radius: 10px;
+  background: #ffffff !important;
+}
+.redux-dashboard-theme .mission-meta span,
+.redux-dashboard-theme .historical-replay-meta-card span,
+.redux-dashboard-theme .historical-replay-telemetry-card span,
+.redux-dashboard-theme .operator-readiness-card span,
+.redux-dashboard-theme .operator-risk-card span,
+.redux-dashboard-theme .hybrid-card-label,
+.redux-dashboard-theme .long-duration-card span,
+.redux-dashboard-theme .long-duration-wear-card span {
+  display: block;
+  color: var(--pd-muted) !important;
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: .7px;
+}
+.redux-dashboard-theme .mission-meta strong,
+.redux-dashboard-theme .historical-replay-meta-card strong,
+.redux-dashboard-theme .historical-replay-telemetry-card strong,
+.redux-dashboard-theme .operator-readiness-card strong,
+.redux-dashboard-theme .operator-risk-card strong,
+.redux-dashboard-theme .hybrid-summary-card strong,
+.redux-dashboard-theme .long-duration-card strong,
+.redux-dashboard-theme .long-duration-wear-card strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--pd-navy) !important;
+  font-size: 10px;
+}
+.redux-dashboard-theme .mission-progress-track,
+.redux-dashboard-theme .engine-life-progress-track,
+.redux-dashboard-theme .long-duration-wear-track,
+.redux-dashboard-theme .hybrid-progress-track {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e7eef5 !important;
+}
+.redux-dashboard-theme .mission-progress-track { margin: 14px 16px 0; }
+.redux-dashboard-theme .mission-progress-fill,
+.redux-dashboard-theme .engine-life-progress-fill,
+.redux-dashboard-theme .hybrid-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--pd-cyan), var(--pd-blue)) !important;
+}
+.redux-dashboard-theme .long-duration-wear-fill { height: 100%; background: linear-gradient(90deg, #60a5fa, #2563eb) !important; }
+.redux-dashboard-theme .fault-status-line,
+.redux-dashboard-theme .mission-phases { margin: 10px 16px 0; }
+.redux-dashboard-theme .fault-status-line { display: flex; justify-content: space-between; color: var(--pd-text-soft) !important; font-size: 7px; }
+.redux-dashboard-theme .mission-phases { display: flex; gap: 5px; flex-wrap: wrap; }
+.redux-dashboard-theme .mission-phases span { padding: 5px 7px; border-radius: 99px; border: 1px solid #e0e8f0; background: #f8fbfe; color: #718295; font-size: 6px; font-weight: 750; }
+.redux-dashboard-theme .fault-box { margin: 15px 16px 0; padding: 15px; border: 1px solid #f4d6d6 !important; border-radius: 11px; background: #fffafa !important; }
+.redux-dashboard-theme .fault-box h3 { margin: 5px 0 0; color: #8f2f2f !important; font-size: 12px; }
+.redux-dashboard-theme .fault-grid { margin-top: 12px; display: grid; grid-template-columns: 1.5fr .7fr .7fr; gap: 9px; }
+.redux-dashboard-theme .fault-field label { display: block; margin-bottom: 5px; color: #9a6b6b !important; font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme .mission-disclaimer { margin: 12px 0 0; color: #8a6a6a !important; font-size: 7px; line-height: 1.6; }
+
+
+.redux-dashboard-theme .historical-replay-panel { overflow: hidden; }
+.redux-dashboard-theme .historical-replay-title-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.redux-dashboard-theme .historical-replay-badge,
+.redux-dashboard-theme .long-duration-badge,
+.redux-dashboard-theme .hybrid-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid #d4e5f5 !important;
+  border-radius: 99px;
+  background: #f2f8ff !important;
+  color: var(--pd-blue) !important;
+  font-size: 6px;
+  font-weight: 900;
+}
+.redux-dashboard-theme .historical-replay-connection { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.redux-dashboard-theme .replay-connection-item { min-width: 88px; padding: 9px; border: 1px solid var(--pd-line); border-radius: 8px; background: #fff; }
+.redux-dashboard-theme .replay-connection-item span { display: block; color: var(--pd-muted); font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme .replay-connection-item strong { display: block; margin-top: 4px; color: var(--pd-navy); font-size: 8px; }
+.redux-dashboard-theme .historical-replay-load-row { padding: 15px 18px; display: flex; align-items: end; gap: 9px; border-bottom: 1px solid var(--pd-line); }
+.redux-dashboard-theme .historical-replay-field-grow { flex: 1; }
+.redux-dashboard-theme .historical-replay-field label { display: block; margin-bottom: 5px; color: var(--pd-muted); font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme .historical-replay-meta-grid { padding: 14px 18px 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.redux-dashboard-theme .historical-replay-controls { padding: 14px 18px 0; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.redux-dashboard-theme .historical-replay-speed-group > span { color: var(--pd-muted); font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme .historical-replay-timeline { margin: 15px 18px 0; padding: 14px; border: 1px solid var(--pd-line); border-radius: 10px; background: var(--pd-surface-soft); }
+.redux-dashboard-theme .historical-replay-timeline-head,
+.redux-dashboard-theme .historical-replay-timeline-meta { display: flex; justify-content: space-between; gap: 14px; color: var(--pd-text-soft); font-size: 7px; }
+.redux-dashboard-theme .historical-replay-timeline input { margin: 12px 0; }
+.redux-dashboard-theme .historical-replay-telemetry-grid { padding: 14px 18px 0; display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; }
+.redux-dashboard-theme .historical-replay-telemetry-card small { color: var(--pd-muted) !important; font-size: 6px; }
+.redux-dashboard-theme .historical-replay-isolation { margin: 15px 18px 18px; padding: 15px; border: 1px solid #d9e8f4 !important; border-radius: 11px; background: #f7fbff !important; }
+.redux-dashboard-theme .historical-replay-isolation-head { display: flex; justify-content: space-between; gap: 14px; }
+.redux-dashboard-theme .historical-replay-isolation h4 { margin: 4px 0 0; color: var(--pd-navy) !important; font-size: 11px; }
+.redux-dashboard-theme .historical-replay-isolation-grid { margin-top: 12px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.redux-dashboard-theme .historical-replay-isolation-grid > div { padding: 10px; border: 1px solid var(--pd-line); border-radius: 8px; background: #fff; }
+.redux-dashboard-theme .historical-replay-isolation-grid span { display: block; color: var(--pd-muted); font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme .historical-replay-isolation-grid strong { display: block; margin-top: 4px; color: var(--pd-navy); font-size: 8px; }
+.redux-dashboard-theme .historical-replay-isolation p { color: var(--pd-text-soft) !important; font-size: 8px; }
+
+.redux-dashboard-theme .operator-readiness-panel { overflow: hidden; }
+.redux-dashboard-theme .operator-decision-area { text-align: right; }
+.redux-dashboard-theme .operator-decision-label { display: block; color: var(--pd-muted) !important; font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme .operator-decision { margin-top: 6px; padding: 8px 11px; border: 1px solid #d8e4ed; border-radius: 8px; background: #f8fbfe !important; color: var(--pd-navy) !important; font-size: 9px; font-weight: 900; }
+.redux-dashboard-theme .operator-section-heading,
+.redux-dashboard-theme .long-duration-section-heading {
+  margin: 16px 18px 0;
+  padding: 9px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--pd-line);
+}
+.redux-dashboard-theme .operator-section-heading > div { display: flex; align-items: center; gap: 9px; }
+.redux-dashboard-theme .operator-section-index { color: var(--pd-blue) !important; font-size: 8px; font-weight: 900; }
+.redux-dashboard-theme .operator-section-heading strong,
+.redux-dashboard-theme .long-duration-section-heading strong { color: var(--pd-navy) !important; font-size: 10px; }
+.redux-dashboard-theme .operator-section-caption,
+.redux-dashboard-theme .long-duration-section-heading span { color: var(--pd-muted) !important; font-size: 7px; }
+.redux-dashboard-theme .operator-readiness-grid { padding: 12px 18px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.redux-dashboard-theme .operator-health-grid { grid-template-columns: repeat(4, 1fr); }
+.redux-dashboard-theme .operator-readiness-risk-grid { padding: 12px 18px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.redux-dashboard-theme .operator-risk-card small { display: block; margin-top: 5px; color: var(--pd-muted) !important; font-size: 6px; line-height: 1.5; }
+.redux-dashboard-theme .operator-readiness-details { padding: 12px 18px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+.redux-dashboard-theme .operator-readiness-detail { padding: 14px; border: 1px solid var(--pd-line); border-radius: 10px; background: #fff; }
+.redux-dashboard-theme .operator-readiness-detail > span { display: block; color: var(--pd-muted); font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme .operator-readiness-detail p,
+.redux-dashboard-theme .operator-readiness-detail li { color: var(--pd-text-soft) !important; font-size: 8px; line-height: 1.6; }
+.redux-dashboard-theme .operator-readiness-detail ul { margin: 8px 0 0 17px; }
+.redux-dashboard-theme .operator-authorization-status { margin-top: 9px; display: flex; justify-content: space-between; gap: 10px; color: var(--pd-navy); font-size: 8px; }
+.redux-dashboard-theme .operator-authorization-status b { color: var(--pd-red); }
+.redux-dashboard-theme .operator-factor-section { margin: 12px 18px 0; }
+.redux-dashboard-theme .operator-readiness-safety { margin: 16px 18px 0; padding: 14px; border: 1px solid #f0d0d0; border-radius: 10px; background: #fff8f8; }
+.redux-dashboard-theme .operator-safety-primary { color: var(--pd-red); font-size: 8px; font-weight: 900; }
+.redux-dashboard-theme .operator-safety-secondary { margin-top: 5px; color: #7d6161; font-size: 7px; }
+.redux-dashboard-theme .operator-readiness-footer { margin-top: 16px; padding: 12px 18px; display: flex; gap: 8px; flex-wrap: wrap; border-top: 1px solid var(--pd-line); background: #fafcfe; }
+.redux-dashboard-theme .operator-readiness-footer span { padding: 5px 7px; border-radius: 99px; background: #eef4f9; color: #647689; font-size: 6px; font-weight: 800; }
+
+.redux-dashboard-theme .hybrid-intelligence-panel {
+  overflow: hidden;
+  background: #ffffff !important;
+  border: 1px solid var(--pd-line) !important;
+  border-radius: var(--pd-radius) !important;
+  box-shadow: var(--pd-shadow-sm);
+}
+.redux-dashboard-theme .hybrid-summary-grid { padding: 14px 18px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.redux-dashboard-theme .hybrid-summary-card small { display: block; margin-top: 5px; color: var(--pd-muted) !important; font-size: 6px; }
+.redux-dashboard-theme .hybrid-main-grid { padding: 14px 18px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+.redux-dashboard-theme .hybrid-intelligence-card { min-height: 210px; }
+.redux-dashboard-theme .hybrid-card-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.redux-dashboard-theme .hybrid-card-heading > div:first-child { display: flex; align-items: flex-start; gap: 9px; }
+.redux-dashboard-theme .hybrid-card-index { color: var(--pd-blue) !important; font-size: 9px; font-weight: 900; }
+.redux-dashboard-theme .hybrid-card-heading h4 { margin: 3px 0 0; color: var(--pd-navy) !important; font-size: 11px; }
+.redux-dashboard-theme .hybrid-state-chip,
+.redux-dashboard-theme .hybrid-review-state { padding: 5px 7px; border: 1px solid var(--pd-line); border-radius: 99px; background: #f8fbfe !important; color: #647689 !important; font-size: 6px; font-weight: 900; }
+.redux-dashboard-theme [data-tone="good"],
+.redux-dashboard-theme [data-tone="ok"],
+.redux-dashboard-theme [data-tone="success"] { color: var(--pd-green) !important; border-color: #cae7d3 !important; background: #f5fcf7 !important; }
+.redux-dashboard-theme [data-tone="warning"] { color: var(--pd-amber) !important; border-color: #f5ddb8 !important; background: #fffaf1 !important; }
+.redux-dashboard-theme [data-tone="danger"] { color: var(--pd-red) !important; border-color: #f2caca !important; background: #fff7f7 !important; }
+.redux-dashboard-theme .hybrid-primary-value { margin-top: 24px; }
+.redux-dashboard-theme .hybrid-primary-value strong { display: block; color: var(--pd-navy) !important; font-size: 22px; line-height: 1; }
+.redux-dashboard-theme .hybrid-primary-value span { display: block; margin-top: 5px; color: var(--pd-muted) !important; font-size: 6px; }
+.redux-dashboard-theme .hybrid-confidence-row,
+.redux-dashboard-theme .hybrid-evidence-row { margin-top: 18px; display: flex; justify-content: space-between; gap: 10px; color: var(--pd-text-soft) !important; font-size: 7px; }
+.redux-dashboard-theme .hybrid-progress-track { margin-top: 7px; }
+.redux-dashboard-theme .hybrid-authority-grid { padding: 14px 18px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.redux-dashboard-theme .hybrid-authority-note,
+.redux-dashboard-theme .hybrid-review-card { padding: 13px; border: 1px solid var(--pd-line); border-radius: 10px; background: #fff; color: var(--pd-text-soft); font-size: 8px; }
+.redux-dashboard-theme .hybrid-footer { margin-top: 15px; padding: 12px 18px; display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid var(--pd-line); background: #fafcfe; color: var(--pd-muted); font-size: 7px; }
+
+
+.redux-dashboard-theme .twin-status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; background: transparent !important; box-shadow: none; border: 0 !important; }
+.redux-dashboard-theme .info-panel { overflow: hidden; }
+.redux-dashboard-theme .info-panel-header { min-height: 50px; padding: 12px 14px; display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--pd-line); background: #fbfdff; }
+.redux-dashboard-theme .info-panel-header span { color: var(--pd-blue); font-size: 7px; font-weight: 900; }
+.redux-dashboard-theme .info-panel-header strong { color: var(--pd-navy); font-size: 8px; }
+.redux-dashboard-theme .info-row { min-height: 38px; padding: 0 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #edf2f6; }
+.redux-dashboard-theme .info-row:last-child { border-bottom: 0; }
+.redux-dashboard-theme .info-row span { color: var(--pd-text-soft); font-size: 8px; }
+.redux-dashboard-theme .info-row strong { color: var(--pd-navy); font-size: 8px; }
+.redux-dashboard-theme .health-preview { border-color: #d4e8dc !important; }
+
+
+.redux-dashboard-theme .long-duration-panel { overflow: hidden; }
+.redux-dashboard-theme .long-duration-summary { padding: 14px 18px 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.redux-dashboard-theme .engine-life-progress { margin: 15px 18px 0; }
+.redux-dashboard-theme .engine-life-scale { margin-top: 7px; display: flex; justify-content: space-between; color: var(--pd-muted); font-size: 6px; }
+.redux-dashboard-theme .long-duration-chart-grid { padding: 12px 18px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.redux-dashboard-theme .long-duration-chart-card { padding: 13px; border: 1px solid var(--pd-line); border-radius: 10px; background: #fff; }
+.redux-dashboard-theme .long-duration-chart-title { display: flex; justify-content: space-between; gap: 10px; }
+.redux-dashboard-theme .long-duration-chart-title strong { color: var(--pd-navy); font-size: 9px; }
+.redux-dashboard-theme .long-duration-chart-title span { color: var(--pd-muted); font-size: 6px; }
+.redux-dashboard-theme .long-duration-chart { width: 100%; max-width: 100%; margin-top: 10px; background: #fbfdff; border-radius: 7px; }
+.redux-dashboard-theme .long-duration-wear-grid { padding: 12px 18px 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.redux-dashboard-theme .long-duration-wear-card strong { margin-bottom: 8px; }
+.redux-dashboard-theme .long-duration-maintenance { margin: 12px 18px 0; padding: 14px; border: 1px solid var(--pd-line); border-radius: 10px; background: #fff; }
+.redux-dashboard-theme .long-duration-maintenance-empty { color: var(--pd-muted); font-size: 8px; }
+.redux-dashboard-theme .long-duration-safety { margin: 15px 18px 18px; padding: 13px; border: 1px solid #e9d6a7; border-radius: 10px; background: #fffaf0; color: #886324; font-size: 8px; line-height: 1.6; }
+
+
+.redux-dashboard-theme .team-footer {
+  margin: 18px 0 0 var(--pd-sidebar);
+  width: calc(100% - var(--pd-sidebar));
+  background: #ffffff !important;
+  color: var(--pd-text) !important;
+  border-top: 1px solid var(--pd-line) !important;
+}
+.redux-dashboard-theme .team-footer-inner {
+  padding: 34px 32px;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 40px;
+}
+.redux-dashboard-theme .team-footer-brand { display: flex; gap: 16px; align-items: flex-start; }
+.redux-dashboard-theme .team-logo-frame { width: 86px; height: 86px; flex: 0 0 auto; padding: 8px; display: grid; place-items: center; border: 1px solid var(--pd-line); border-radius: 16px; background: #f8fbfe; }
+.redux-dashboard-theme .team-official-logo { max-width: 100%; max-height: 100%; object-fit: contain; }
+.redux-dashboard-theme .team-brand-label,
+.redux-dashboard-theme .team-members-eyebrow { color: var(--pd-blue) !important; font-size: 7px; font-weight: 900; letter-spacing: 1px; }
+.redux-dashboard-theme .team-brand-name { margin: 5px 0 0; color: var(--pd-navy) !important; font-size: 26px; }
+.redux-dashboard-theme .team-project-name { margin: 4px 0 0; color: var(--pd-text) !important; font-size: 10px; font-weight: 700; }
+.redux-dashboard-theme .team-project-description { margin: 7px 0 0; color: var(--pd-text-soft) !important; font-size: 9px; line-height: 1.6; }
+.redux-dashboard-theme .team-members-heading { color: var(--pd-navy) !important; font-size: 15px; }
+.redux-dashboard-theme .team-members-grid { margin-top: 14px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.redux-dashboard-theme .team-member-card { padding: 11px; display: flex; align-items: center; gap: 10px; border: 1px solid var(--pd-line); border-radius: 9px; background: #fff; }
+.redux-dashboard-theme .team-member-number { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 7px; background: #eef5ff; color: var(--pd-blue); font-size: 7px; font-weight: 900; }
+.redux-dashboard-theme .team-member-info strong { display: block; color: var(--pd-navy) !important; font-size: 8px; }
+.redux-dashboard-theme .team-member-info span { display: block; margin-top: 3px; color: var(--pd-muted) !important; font-size: 6px; }
+.redux-dashboard-theme .team-footer-bottom { min-height: 48px; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--pd-line); background: #fafcfe; color: var(--pd-muted); font-size: 8px; }
+.redux-dashboard-theme .team-footer-project { display: flex; align-items: center; gap: 8px; }
+.redux-dashboard-theme .team-footer-credit strong { color: var(--pd-navy) !important; }
+
+
+@media (max-width: 1400px) {
+  .redux-dashboard-theme .telemetry-strip { grid-template-columns: repeat(4, 1fr); }
+  .redux-dashboard-theme .digital-twin-grid { grid-template-columns: minmax(220px, .75fr) minmax(470px, 1.55fr); }
+  .redux-dashboard-theme .simulation-input-panel { grid-column: 1 / -1; }
+  .redux-dashboard-theme .simulation-input-panel { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .redux-dashboard-theme .simulation-input-panel .panel-header { grid-column: 1 / -1; }
+  .redux-dashboard-theme .environment-summary,
+  .redux-dashboard-theme .simulation-control-actions { align-self: stretch; }
+  .redux-dashboard-theme .historical-replay-telemetry-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 1100px) {
+  :root { --pd-sidebar: 224px; }
+  .redux-dashboard-theme .nav-item-label { font-size: 9px; }
+  .redux-dashboard-theme .topbar { align-items: flex-start; }
+  .redux-dashboard-theme .top-status { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .redux-dashboard-theme .digital-twin-grid { grid-template-columns: 1fr; }
+  .redux-dashboard-theme .telemetry-panel,
+  .redux-dashboard-theme .simulation-input-panel { display: block; }
+  .redux-dashboard-theme .telemetry-panel { order: 2; }
+  .redux-dashboard-theme .engine-panel { order: 1; }
+  .redux-dashboard-theme .simulation-input-panel { order: 3; }
+  .redux-dashboard-theme .twin-status-grid,
+  .redux-dashboard-theme .operator-readiness-grid,
+  .redux-dashboard-theme .hybrid-summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .redux-dashboard-theme .hybrid-main-grid { grid-template-columns: 1fr; }
+  .redux-dashboard-theme .long-duration-summary { grid-template-columns: repeat(3, 1fr); }
+  .redux-dashboard-theme .long-duration-wear-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 820px) {
+  :root { --pd-sidebar: 0px; }
+  .redux-dashboard-theme .sidebar {
+    width: 270px;
+    transform: translateX(-102%);
+    transition: transform .22s ease;
+    box-shadow: 18px 0 45px rgba(15, 23, 42, .12);
+  }
+  .redux-dashboard-theme.sidebar-open .sidebar { transform: translateX(0); }
+  .redux-dashboard-theme .workspace { width: 100%; margin-left: 0; padding: 18px 16px 36px; }
+  .redux-dashboard-theme .topbar { margin: -18px -16px 16px; padding: 14px 16px; }
+  .redux-dashboard-theme .sidebar-toggle { display: grid; place-items: center; }
+  .redux-dashboard-theme .top-status { display: none; }
+  .redux-dashboard-theme .telemetry-strip { grid-template-columns: repeat(2, 1fr); }
+  .redux-dashboard-theme .mission-meta,
+  .redux-dashboard-theme .historical-replay-meta-grid,
+  .redux-dashboard-theme .operator-readiness-grid,
+  .redux-dashboard-theme .operator-readiness-risk-grid,
+  .redux-dashboard-theme .hybrid-summary-grid,
+  .redux-dashboard-theme .long-duration-summary,
+  .redux-dashboard-theme .long-duration-wear-grid { grid-template-columns: repeat(2, 1fr); }
+  .redux-dashboard-theme .historical-replay-connection { display: none; }
+  .redux-dashboard-theme .historical-replay-telemetry-grid { grid-template-columns: repeat(2, 1fr); }
+  .redux-dashboard-theme .historical-replay-isolation-grid { grid-template-columns: repeat(2, 1fr); }
+  .redux-dashboard-theme .operator-readiness-details { grid-template-columns: 1fr; }
+  .redux-dashboard-theme .long-duration-chart-grid { grid-template-columns: 1fr; }
+  .redux-dashboard-theme .team-footer { margin-left: 0; width: 100%; }
+  .redux-dashboard-theme .team-footer-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .redux-dashboard-theme .title-block h2 { font-size: 20px; }
+  .redux-dashboard-theme .title-block p { display: none; }
+  .redux-dashboard-theme .telemetry-strip { grid-template-columns: 1fr 1fr; }
+  .redux-dashboard-theme .simulation-stage,
+  .redux-dashboard-theme .engine-canvas-host,
+  .redux-dashboard-theme .uav-mission-stage,
+  .redux-dashboard-theme .uav-mission-canvas-host { min-height: 340px; }
+  .redux-dashboard-theme .fault-grid,
+  .redux-dashboard-theme .mission-meta,
+  .redux-dashboard-theme .historical-replay-meta-grid,
+  .redux-dashboard-theme .historical-replay-telemetry-grid,
+  .redux-dashboard-theme .historical-replay-isolation-grid,
+  .redux-dashboard-theme .operator-readiness-grid,
+  .redux-dashboard-theme .operator-readiness-risk-grid,
+  .redux-dashboard-theme .hybrid-summary-grid,
+  .redux-dashboard-theme .long-duration-summary,
+  .redux-dashboard-theme .long-duration-wear-grid { grid-template-columns: 1fr; }
+  .redux-dashboard-theme .historical-replay-load-row { align-items: stretch; flex-direction: column; }
+  .redux-dashboard-theme .team-members-grid { grid-template-columns: 1fr; }
+  .redux-dashboard-theme .team-footer-bottom { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 12px; }
+}
