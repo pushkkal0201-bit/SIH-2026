@@ -1,2 +1,2 @@
 # PRATIRUP
-Project Development
+Project Development -- By Team QubitX
