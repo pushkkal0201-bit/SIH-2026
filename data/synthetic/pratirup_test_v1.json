@@ -1,0 +1,32 @@
+{
+  "dataset": "PRATIRUP Synthetic Mission Dataset",
+  "version": "1.0.0",
+  "synthetic": true,
+  "mission_count": 50,
+  "split_counts": {
+    "train": 30,
+    "validation": 10,
+    "test": 10
+  },
+  "mission_class_counts": {
+    "FUEL_PRESSURE_LOSS": 8,
+    "OIL_PRESSURE_LOSS": 8,
+    "COOLING_DEGRADATION": 8,
+    "EGT_IMBALANCE": 8,
+    "NORMAL": 10,
+    "VIBRATION_INCREASE": 8
+  },
+  "samples_per_mission": 1521,
+  "total_samples": 76050,
+  "mission_duration_sec": 760.0,
+  "fault_classes": [
+    "COOLING_DEGRADATION",
+    "EGT_IMBALANCE",
+    "FUEL_PRESSURE_LOSS",
+    "OIL_PRESSURE_LOSS",
+    "VIBRATION_INCREASE"
+  ],
+  "normal_class": "NORMAL",
+  "full_mission_records_included": false,
+  "purpose": "Compact public GitHub summary of PRATIRUP synthetic mission scenarios."
+}
