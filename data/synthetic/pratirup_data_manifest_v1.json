@@ -1,0 +1,63 @@
+{
+  "dataset": "PRATIRUP Synthetic Operational Dataset",
+  "version": "1.0.0",
+  "problem_statement_id": 26054,
+  "data_origin": "PRATIRUP_SYNTHETIC_SIMULATOR",
+  "synthetic": true,
+  "real_operational_data": false,
+  "official_drdo_vrde_measurements": false,
+  "classified_data": false,
+  "sampling_interval_sec": 0.5,
+  "sampling_frequency_hz": 2.0,
+  "mission_count": 50,
+  "mission_split_counts": {
+    "train": 30,
+    "validation": 10,
+    "test": 10
+  },
+  "mission_class_counts": {
+    "FUEL_PRESSURE_LOSS": 8,
+    "OIL_PRESSURE_LOSS": 8,
+    "COOLING_DEGRADATION": 8,
+    "EGT_IMBALANCE": 8,
+    "NORMAL": 10,
+    "VIBRATION_INCREASE": 8
+  },
+  "total_samples": 76050,
+  "split_sample_counts": {
+    "train": 45630,
+    "validation": 15210,
+    "test": 15210
+  },
+  "sample_label_counts": {
+    "NORMAL": 36010,
+    "FUEL_PRESSURE_LOSS": 8008,
+    "OIL_PRESSURE_LOSS": 8008,
+    "COOLING_DEGRADATION": 8008,
+    "EGT_IMBALANCE": 8008,
+    "VIBRATION_INCREASE": 8008
+  },
+  "fault_classes": [
+    "OIL_PRESSURE_LOSS",
+    "COOLING_DEGRADATION",
+    "EGT_IMBALANCE",
+    "FUEL_PRESSURE_LOSS",
+    "VIBRATION_INCREASE"
+  ],
+  "normal_class": "NORMAL",
+  "targets": {
+    "anomaly_detection": "anomaly_target",
+    "fault_classification": "sample_label"
+  },
+  "rul_target_included": false,
+  "rul_dataset_policy": "RUL/lifecycle dataset is generated separately from frozen D9 synthetic lifecycle modules.",
+  "canonical_column_count": 33,
+  "total_column_count": 49,
+  "files": {
+    "all": "data\\synthetic\\pratirup_operational_dataset_v1.csv",
+    "train": "data\\synthetic\\pratirup_train_v1.csv",
+    "validation": "data\\synthetic\\pratirup_validation_v1.csv",
+    "test": "data\\synthetic\\pratirup_test_v1.csv",
+    "missions": "data\\synthetic\\pratirup_missions_v1.json"
+  }
+}
